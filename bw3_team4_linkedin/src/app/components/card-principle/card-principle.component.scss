@@ -1,0 +1,36 @@
+#button{
+  &:hover{
+      border:solid 2px #3582CE;
+  background-color: #E2F0FE;
+  border-radius: 20px;
+  a{
+    color: #1770c9;
+    text-decoration: none;
+  }
+  }
+  border:solid 1px #3582CE;
+  background-color: white;
+  border-radius: 20px;
+  a{
+    color: #1770c9;
+    text-decoration: none;
+  }
+}
+#button1{
+  border-radius: 20px;
+  &:hover{
+  background-color:#004182 ;
+  }
+}
+
+#a{
+  color: gray;
+  text-decoration: none;
+  &:hover{
+    color:#0A66C2;
+text-decoration: underline;
+  }
+}
+// #sfondo{
+//   // background-image: url("img/linkedin.png");
+// }
