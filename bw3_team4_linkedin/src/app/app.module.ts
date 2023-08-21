@@ -8,6 +8,7 @@ import { CardPrincipleComponent } from "./components/card-principle/card-princip
 import { NavbarComponent } from "./components/navbar/navbar.component";
 import { BottomCardComponent } from "./components/bottom-card/bottom-card.component";
 import { SidebarComponent } from "./components/sidebar/sidebar.component";
+import { ChatComponent } from "./components/chat/chat.component";
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { SidebarComponent } from "./components/sidebar/sidebar.component";
     NavbarComponent,
     BottomCardComponent,
     SidebarComponent,
+    ChatComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
