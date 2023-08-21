@@ -1,10 +1,11 @@
 export interface Profilo {
-  _id:       string;
-  name:      string;
-  surname:   string;
-  email:     string;
-  username:  string;
-  title:     string;
-  bio:       string;
-  area:      string;
+  _id: number;
+  name: string;
+  surname: string;
+  email: string;
+  image: string;
+  username: string;
+  title: string;
+  bio: string;
+  area: string;
 }
