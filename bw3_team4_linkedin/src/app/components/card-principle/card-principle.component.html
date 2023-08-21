@@ -1,0 +1,112 @@
+<div class="card" *ngIf="profile">
+  <div id="sfondo">
+    <img
+      [src]="profile.image"
+      class="card-img-top rounded-5 mt-2 ms-2"
+      alt="..."
+      style="width: 70px;"
+    />
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{profile.name}} {{profile.surname}}</h5>
+    <p>--</p>
+    <a id="a" class="card-text"> {{profile.title}}<br /> </a>
+    <a id="a" class="card-text">
+      {{profile.email}}
+    </a>
+
+    <div class="d-flex justify-content-center mt-2">
+      <a href="#" id="button1" class="btn btn-primary fw-bold me-1"
+        >Disponibile per</a
+      >
+      <button id="button">
+        <a href="#" class="ms-1 fw-bold">Aggiungi sezione del profilo</a>
+      </button>
+      <!-- <div class="dropdown">
+         <button
+          class="btn btn-secondary text-secondary dropdown-toggle p-0 rounded-5 justify-content-center"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <span class="text-white fw-bold fs-1">...</span>
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Action</a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+        </ul>
+      </div> -->
+    </div>
+    <div class="d-none d-lg-flex justify-content-lg-between">
+      <div class="border mt-2 rounded-3 w-50 p-1">
+        <p>
+          <span class="fw-bold">Fai sapere che stai facendo selezione</span> e
+          attrai candidati qualificati
+        </p>
+      </div>
+      <div class="border mt-2 rounded-3 w-50 p-1">
+        <p>
+          <span class="fw-bold">Metti in risalto i servizi</span> che offri,
+          così tu e la tua azienda potrete appparire nei risultati di ricerca
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- CAROUSEL -->
+  <div id="carouselExample" class="carousel slide d-lg-none">
+    <div class="carousel-inner">
+      <div class="carousel-item active border mt-2 rounded-3">
+        <p>
+          <span class="fw-bold">Fai sapere che stai facendo selezione</span> e
+          attrai candidati qualificati
+        </p>
+      </div>
+      <div class="carousel-item border mt-2 rounded-3">
+        <p>
+          <span class="fw-bold">Metti in risalto i servizi</span> che offri,
+          così tu e la tua azienda potrete appparire nei risultati di ricerca
+        </p>
+      </div>
+    </div>
+    <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#carouselExample"
+      data-bs-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#carouselExample"
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+<!-- </div> -->
+
+<!--  -->
+<br />
+<div class="dropdown">
+  <a
+    class="btn btn-secondary dropdown-toggle"
+    href="#"
+    role="button"
+    data-bs-toggle="dropdown"
+    aria-expanded="false"
+  >
+    Dropdown link
+  </a>
+
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
+  </ul>
+</div>
