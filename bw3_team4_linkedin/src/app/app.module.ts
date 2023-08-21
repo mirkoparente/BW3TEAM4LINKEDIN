@@ -5,8 +5,8 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { ProfiloComponent } from "./components/profilo/profilo.component";
 import { CardPrincipleComponent } from "./components/card-principle/card-principle.component";
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { BottomCardComponent } from './components/bottom-card/bottom-card.component';
+import { NavbarComponent } from "./components/navbar/navbar.component";
+import { BottomCardComponent } from "./components/bottom-card/bottom-card.component";
 import { SidebarComponent } from "./components/sidebar/sidebar.component";
 
 @NgModule({
@@ -16,7 +16,7 @@ import { SidebarComponent } from "./components/sidebar/sidebar.component";
     CardPrincipleComponent,
     NavbarComponent,
     BottomCardComponent,
-    SidebarComponent
+    SidebarComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
