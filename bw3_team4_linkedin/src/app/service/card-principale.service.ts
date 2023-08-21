@@ -17,9 +17,8 @@ export class CardPrincipaleService {
   constructor(private http: HttpClient) {}
 
   get(): Observable<any> {
-    return this.http.get<Profilo[]>(this.url, {
+    return this.http.get<Profilo>(this.url, {
       headers: {
-        "Content-Type": "application/json",
         Authorization: `Bearer ${this.private}`,
       },
     });

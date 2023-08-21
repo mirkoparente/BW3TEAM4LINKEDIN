@@ -6,10 +6,16 @@ import { AppComponent } from "./app.component";
 import { ProfiloComponent } from "./components/profilo/profilo.component";
 import { CardPrincipleComponent } from "./components/card-principle/card-principle.component";
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { NavbarComponent } from "./components/navbar/navbar.component";
 
 @NgModule({
-  declarations: [AppComponent, ProfiloComponent,
-    SidebarComponent, CardPrincipleComponent],
+  declarations: [
+    AppComponent,
+    ProfiloComponent,
+    SidebarComponent,
+    NavbarComponent,
+    CardPrincipleComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
