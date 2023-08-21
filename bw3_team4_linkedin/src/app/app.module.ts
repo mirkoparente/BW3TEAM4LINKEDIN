@@ -13,10 +13,7 @@ import { BottomCardComponent } from './components/bottom-card/bottom-card.compon
     AppComponent,
     ProfiloComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })
