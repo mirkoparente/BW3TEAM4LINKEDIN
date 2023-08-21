@@ -46,7 +46,7 @@
 
 
       <!-- ------- Profili presi random  A---------->
-      <div *ngFor="let profile of sideProfileA; let i = index">
+      <div *ngFor="let profile of sideProfileA; index as i">
 
         <div class="d-flex justify-content-start gap-4">
 
@@ -84,13 +84,16 @@
         </div>
 
 
-        <hr  class="my-4" />
+        <hr *ngIf="!(i == 4)"  class="my-4" />
+        <div *ngIf="(i == 4)"></div>
       </div>
+
+      <hr *ngIf="profileB == true"  class="my-4" />
 
       <!-- Profili presi random  B-->
  <div *ngIf="profileB == true">
 
-  <div *ngFor="let profile of sideProfileB; let i = index">
+  <div *ngFor="let profile of sideProfileB; index as i">
 
    <div class="d-flex justify-content-start gap-4">
 
@@ -128,7 +131,8 @@
    </div>
 
 
-   <hr  class="my-4" />
+   <hr *ngIf="!(i == 4)"  class="my-4" />
+   <div *ngIf="(i == 4)"></div>
  </div>
 </div>
 

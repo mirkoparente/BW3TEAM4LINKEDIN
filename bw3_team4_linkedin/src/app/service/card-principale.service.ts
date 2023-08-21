@@ -28,7 +28,6 @@ export class CardPrincipaleService {
   getAllProfile() {
     return this.http.get<Profilo[]>(this.urlAllProfile, {
       headers: {
-        "Content-Type": "application/json",
         Authorization: `Bearer ${this.private}`,
       },
     })
