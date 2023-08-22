@@ -1,47 +1,160 @@
-<div class="bg-body-secondary">
-<div class="container py-2">
-<div class="row h-100">
-<div class=" px-0 col bg-white text-black rounded-4 d-flex justify-content-between flex-column  " >
-  <!--  -->
-  <div id="sfondo" class=" d-flex justify-content-start align-items-end position-relative rounded-top-4">
-    <img *ngIf="id == null"
-      [src]="profile.image || ''"
-      class="card-img-top rounded-pill mt-2 ms-2 position-absolute top-50"
-      alt="..."
-      style="width: 150px;"
-    />
-    <img *ngIf="!(id == null)"
-    [src]="profileDataId.image || '' "
-    class="card-img-top rounded-pill mt-2 ms-2 position-absolute top-50"
-    alt="..."
-    style="width: 150px;"
-  />
-  </div>
-  <div class="px-3 mt-5">
-    <h5 *ngIf="id == null" class="card-title mt-3">{{profile.name}} {{profile.surname}}</h5>
-    <h5 *ngIf="!(id == null)" class="card-title mt-3">{{profileDataId.name}} {{profileDataId.surname}}</h5>
-
-    <p>--</p>
-    <a *ngIf="id == null" id="a" class="card-text"> {{profile.title}}<br /> </a>
-    <a *ngIf="!(id == null)" id="a" class="card-text"> {{profileDataId.title}}<br /> </a>
-
-    <a *ngIf="id == null" id="a" class="card-text">
-      {{profile.email}}
-    </a>
-    <a *ngIf="!(id == null)" id="a" class="card-text">
-      {{profileDataId.email}}
-    </a>
-    <br />
-    <!-- MODALE INFORMAZINI DI CONTATTO -->
-    <a
-      id="info"
-      type="button"
-      class="-primary fw-bold"
-      data-bs-toggle="modal"
-      data-bs-target="#staticBackdrop"
-    >
-      Informazioni di contatto
-    </a>
+<!-- CARD  -->
+<div class="bg-body-secondary" *ngIf="profile">
+  <div class="container py-2">
+    <div class="row h-100">
+      <div
+        class="px-0 col bg-white text-black rounded-4 d-flex justify-content-between flex-column"
+        *ngIf="profile"
+      >
+        <!--FOTO COPERTINA E IMG -->
+        <div
+          id="sfondo"
+          class="d-flex justify-content-start align-items-end position-relative rounded-top-4"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="25"
+            height="25"
+            fill="currentColor"
+            class="bi bi-camera-fill mt-2 me-2 position-absolute top-0 end-0 bg-white rounded-5 p-1 text-primary"
+            viewBox="0 0 16 16"
+          >
+            <path d="M10.5 8.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
+            <path
+              d="M2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2zm.5 2a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm9 2.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0z"
+            />
+          </svg>
+          <img
+            [src]="profile.image"
+            class="card-img-top rounded-pill mt-2 ms-2 position-absolute top-50"
+            alt="..."
+            style="width: 130px;"
+          />
+        </div>
+        <div class="px-3 mt-5">
+          <!-- MODALE MATITA -->
+          <div class="d-flex justify-content-end">
+            <button
+              type="button"
+              class="btn btn-primary border-white bg-white text-dark text-end"
+              data-bs-toggle="modal"
+              data-bs-target="#esempModal"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                data-supported-dps="24x24"
+                fill="currentColor"
+                class="mercado-match"
+                width="24"
+                height="24"
+                focusable="false"
+              >
+                <path
+                  d="M21.13 2.86a3 3 0 00-4.17 0l-13 13L2 22l6.19-2L21.13 7a3 3 0 000-4.16zM6.77 18.57l-1.35-1.34L16.64 6 18 7.35z"
+                ></path>
+              </svg>
+            </button>
+          </div>
+          <div
+            class="modal fade"
+            id="esempModal"
+            tabindex="-1"
+            aria-labelledby="esempModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="esempModalLabel">
+                    Modifica presentazione
+                  </h1>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label"
+                        >Nome</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="exampleInputEmail1"
+                        aria-describedby="emailHelp"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label"
+                        >Cognome</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="exampleInputEmail1"
+                        aria-describedby="emailHelp"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label"
+                        >Nome aggiuntivo</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="exampleInputEmail1"
+                        aria-describedby="emailHelp"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputPassword1" class="form-label"
+                        >Posizione attuale</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="exampleInputPassword1"
+                      />
+                    </div>
+                    <div class="mb-3 form-check">
+                      <input
+                        type="checkbox"
+                        class="form-check-input"
+                        id="exampleCheck1"
+                      />
+                    </div>
+                    <button type="submit" class="btn btn-primary">Salva</button>
+                  </form>
+                </div>
+                <div class="modal-footer"></div>
+              </div>
+            </div>
+          </div>
+          <h5 class="card-title mt-3">{{profile.name}} {{profile.surname}}</h5>
+          <p class="p-0 m-0">--</p>
+          <a id="a" class="card-text d-lg-none"
+            >{{profile.title}} - {{profile.email}}
+          </a>
+          <div
+            class="d-flex justify-content-between align-items-center p-0 m-0"
+          >
+            <div class="d-flex flex-column justify-content-center">
+              <a id="a" class="card-text"> <br />{{profile.area}} </a>
+              <!-- MODALE INFORMAZINI DI CONTATTO -->
+              <a
+                id="info"
+                type="button"
+                class="-primary fw-bold"
+                data-bs-toggle="modal"
+                data-bs-target="#staticBackdrop"
+              >
+                Informazioni di contatto
+              </a>
 
               <div
                 class="modal fade"
@@ -491,4 +604,5 @@
         </div>
       </div>
     </div>
-
+  </div>
+</div>
