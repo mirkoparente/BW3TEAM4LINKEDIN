@@ -9,7 +9,7 @@ export class NavbarComponent {
 
   constructor(){}
   status: boolean = false;
-  status2: boolean = false;
+  status2: boolean = true;
 clickEvent(e: Event){
   console.log('clik avvenuto');
     this.status = !this.status;
