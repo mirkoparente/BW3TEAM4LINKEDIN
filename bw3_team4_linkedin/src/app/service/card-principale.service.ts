@@ -38,7 +38,7 @@ export class CardPrincipaleService {
 
     return this.http.get<Profilo>(urlId, {
       headers: {
-        Authorization: `Bearer ${this.private}`,
+        Authorization: `Bearer ${this.appId}`,
       },
     })
   }
