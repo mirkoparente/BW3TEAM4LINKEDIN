@@ -1,3 +1,4 @@
+// BOTTONI
 #button{
   &:hover{
       border:solid 2px #3582CE;
@@ -33,5 +34,54 @@ text-decoration: underline;
 }
 #sfondo{
   background-image: url("https://static.licdn.com/sc/h/lortj0v1h4bx9wlwbdx6zs3f");
-  height: 30vh;
+  height: 15vh;
 }
+
+
+#dropdown1{
+  a p{
+      font-size: small;
+  }
+  #ul {
+    &:hover{
+    background-color: gainsboro;
+
+  }
+  }
+}
+
+#exampleModal {
+  a p{
+    font-size: small;
+    &:hover{
+         text-decoration: underline;
+    }
+
+}
+  #buttonModal{
+    &:hover{
+   background-color: gainsboro;
+   color: #0A66C2;
+  }
+  }
+
+  p{
+    &:hover{
+
+  color: #0A66C2;
+}
+  }
+
+}
+
+
+#altro{
+  ul  {
+    &:hover{
+    background-color: gainsboro;
+    }
+  }
+}
+
+
+
