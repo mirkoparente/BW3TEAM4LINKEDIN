@@ -1,3 +1,4 @@
+import { FormControl, FormsModule } from '@angular/forms';
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { HttpClientModule } from "@angular/common/http";
@@ -9,6 +10,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { BottomCardComponent } from './components/bottom-card/bottom-card.component';
 import { SidebarComponent } from "./components/sidebar/sidebar.component";
 import { ChatComponent } from './components/chat/chat.component';
+import { ModaleComponent } from './components/modale/modale.component';
 
 @NgModule({
   declarations: [
@@ -18,9 +20,10 @@ import { ChatComponent } from './components/chat/chat.component';
     NavbarComponent,
     BottomCardComponent,
     SidebarComponent,
-    ChatComponent
+    ChatComponent,
+    ModaleComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule,FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
