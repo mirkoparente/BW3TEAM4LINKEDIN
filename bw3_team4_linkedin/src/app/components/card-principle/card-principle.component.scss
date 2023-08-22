@@ -75,3 +75,13 @@ text-decoration: underline;
 }
 
 
+#altro{
+  ul  {
+    &:hover{
+    background-color: gainsboro;
+    }
+  }
+}
+
+
+

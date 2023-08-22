@@ -232,11 +232,12 @@
           <br />
         </div>
 
-        <div class="d-flex justify-content-start mt-3">
+        <div class="d-flex justify-content-start align-items-center mt-3">
           <!-- DROPDOWN DISPONIBILE PER -->
           <div class="dropdown" id="dropdown1">
             <button
-              class="btn border-white dropdown-toggle"
+              id="buttonDisponibile"
+              class="btn btn-white border-white border-top-0"
               type="button"
               data-bs-toggle="dropdown"
               aria-expanded="false"
@@ -281,7 +282,7 @@
           <button
             id="button"
             type="button"
-            class="btn btn-primary p-0"
+            class="btn btn-primary"
             data-bs-toggle="modal"
             data-bs-target="#exampleModal"
           >
@@ -403,7 +404,7 @@
           </div>
 
           <!-- DROPDOWN ALTRO -->
-          <div class="dropdown">
+          <div class="dropdown" id="altro">
             <a
               class="btn btn-white text-secondary ms-3 p-0 rounded-5"
               type="button"
@@ -412,9 +413,15 @@
             >
               <button
                 id="altro"
-                class="btn btn-light border-secondary rounded-5"
+                class="btn btn-light border-secondary rounded-5 d-lg-none p-lg-0"
               >
                 ...
+              </button>
+              <button
+                id="altro"
+                class="btn btn-light border-secondary rounded-5 d-none d-lg-block"
+              >
+                Altro
               </button>
             </a>
             <ul class="dropdown-menu">
@@ -425,19 +432,66 @@
                 >
               </li>
               <li>
-                <a class="dropdown-item" href="#">
-                  <i class="bi bi-download"></i> Salva come pdf</a
-                >
-              </li>
-              <li>
-                <!-- MODAL(...) -->
+                <!-- MODAL  SALVA IN PDF -->
                 <button
                   type="button"
-                  class="btn btn-primary"
+                  class="btn"
+                  data-bs-toggle="modal"
+                  data-bs-target="#examplModal"
+                >
+                  <a class="dropdown-item" href="#">
+                    <i class="bi bi-download"></i> Salva come pdf</a
+                  >
+                </button>
+
+                <div
+                  class="modal fade"
+                  id="examplModal"
+                  tabindex="-1"
+                  aria-labelledby="examplModalLabel"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="examplModalLabel">
+                          Modal title
+                        </h1>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div class="modal-body">
+                        Salvato con successo
+                      </div>
+                      <div class="modal-footer">
+                        <button
+                          type="button"
+                          class="btn btn-secondary"
+                          data-bs-dismiss="modal"
+                        >
+                          Close
+                        </button>
+                        <button type="button" class="btn btn-primary">
+                          Save changes
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <!-- MODAL INFORMAZIONI SU QUESTO PROFILO-->
+                <button
+                  type="button"
+                  class="btn"
                   data-bs-toggle="modal"
                   data-bs-target="#eseModal"
                 >
-                  <a class="dropdown-item" href="#"
+                  <a class="dropdown-item"
                     ><i class="bi bi-info-square-fill"></i> Informazioni su
                     questo profilo</a
                   >
@@ -482,6 +536,8 @@
             </ul>
           </div>
         </div>
+
+        <!-- CAROUSEL -->
         <div class="d-none d-lg-flex justify-content-lg-between mt-3">
           <div class="border mt-2 rounded-3 w-50 p-1 ps-3">
             <p>
