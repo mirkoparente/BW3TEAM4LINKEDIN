@@ -6,7 +6,8 @@ const routes: Routes = [
   {
     path: 'profilo', component: ProfiloComponent
 
-  }
+  },
+  { path: 'profilo/:id', component: ProfiloComponent}
 ];
 
 @NgModule({
