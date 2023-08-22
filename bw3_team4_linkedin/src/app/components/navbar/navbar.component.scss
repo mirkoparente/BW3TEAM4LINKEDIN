@@ -13,16 +13,20 @@ a{
   margin: 15px;
   display: block;
 }
-li i {
-  font-size: 3vh;
-  margin: 3px;
+i {
+  font-size: 1.4em;
+  margin: 2px;
+  color: #5f5f5f;
+  cursor: pointer;
+}
+p{
+  font-size: 1em;
 }
 nav{
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   background-color: #fff;
-  padding:  6px 6%;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -31,9 +35,11 @@ nav{
 .navbar-center ul li{
   display: inline-block;
   list-style: none;
+  margin: 0 10px;
 }
 .navbar-center ul li a {
   display: flex;
+  flex-direction: column;
   align-items: center;
   font-size: 14px;
   margin: 5px 8px;
@@ -42,8 +48,8 @@ nav{
 }
 
 .profile-logo{
-  width: 40px;
-  height: 40px;
+  width: 1.4em;
+  height: 1.4em;
   border-radius: 50%;
   display: block;
   cursor: pointer;
@@ -51,13 +57,22 @@ nav{
 }
 .search-box{
   background-color: #f0f2f5;
-  width: 250px;
+  width: 260px;
   height: 30px;
   display: flex;
   align-items: center;
-  padding: 0 15px;
+  padding: 10px 15px;
   margin-top: 15px;
 
+}
+.search-box2{
+  background-color: #f0f2f5;
+  width: 260px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  margin-top: 15px;
 }
 .navbar-left{
   display: flex;
@@ -71,29 +86,47 @@ nav{
   outline: none;
   border: none;
 }
+.search-box2 input{
+  width: 100%;
+  background:transparent;
+  padding: 4px;
+  outline: none;
+  border: none;
+}
+.navbar-right{
+  cursor: pointer;
+  color: #5f5f5f;
+}
+p i {
+  font-size: 0.8em;
+  margin: 0;
+}
 /* dropdwon*/
 .profile-menu-wrap{
   position: absolute;
   top: 100%;
-  right: 5%;
+  right: 15%;
   width: 320px;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.5s;
 
 }
+
 .profile-menu-wrap.open-menu{
   max-height: 400px;
+  color: #5f5f5f;
 }
 .profile-menu{
-  background: #222;
-  color: #fff;
+  background: #fff;
+  color: #222;
   padding: 20px;
   margin: 10px;
+  border-radius: 10px 0px 10px 10px;
+  box-shadow:  0 5px 10px rgba(0,0,0, 0.1);
 }
 .user-info{
   display: flex;
-  align-items: center;
 }
 .user-info img{
   width: 40px;
@@ -110,22 +143,63 @@ nav{
   padding-left: 20px;
   color: #045be6;
   margin: 10px;
+  width: 100%;
 }
 .navbar-over{
+  display: flex;
+    flex-direction: column;
+    align-items: center;
   border-left: solid 1px #5f5f5f;
   height: 100%;
+  color: #5f5f5f;
   cursor: pointer;
 }
-p{
+.navbar-over p{
+  margin-left: 10px;
+}
+.profile-menu a{
   color: #5f5f5f;
   font-size: 0.8em ;
   margin-top: 5px;
+  cursor: pointer;
+  :hover{
+    text-decoration: underline;
+  }
+}
+hr{
+  margin: 5px 0 5px 0;
+}
+/*offcanvas*/
+.card{
+  max-width: 20rem;
+  margin: auto;
+  margin-top: 3em;
+}
+.card ul li{
+  list-style: none;
+}
+.card h3{
+  font-size: 1.2em;
+
+}
+.card a{
+  cursor: pointer;
 }
 
-
-
 /*resp*/
+@media screen and (max-width:1200px) {
+  .navbar-center a p{
+    display: none;
+  }
+  .navbar-center i{
+    font-size: 1.8em;
+  }
+}
 @media screen and (max-width: 1000px){
+  nav{
+    padding: 0;
+    justify-content: space-evenly;
+  }
   .navbar-over{
     display: none;
   }
@@ -143,9 +217,13 @@ p{
     align-items: center;
     justify-content: space-between;
   }
+  .navbar-center ul li{
+    margin: 0;
+  }
 }
 @media  screen and (min-width:769px) {
   .search-box{
     display: flex;
   }
 }
+
