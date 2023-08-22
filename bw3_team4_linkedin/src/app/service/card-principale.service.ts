@@ -37,21 +37,5 @@ export class CardPrincipaleService {
 
     return this.http.get<Profilo[]>(this.apiUrlProfile, { headers });
   }
-
-  getExp(): Observable<Exp[]> {
-    return this.http.get<Exp[]>(this.urlExperience, {
-      headers: {
-        Authorization: `Bearer ${this.appId}`,
-      },
-  });
-}
-
-addExp(data:addExp): Observable<Exp>{
-  return this.http.post<Exp>(this.urlExperience,data,{
-    headers: {
-      Authorization: `Bearer ${this.appId}`,
-    },
-});
-}
 }
 
