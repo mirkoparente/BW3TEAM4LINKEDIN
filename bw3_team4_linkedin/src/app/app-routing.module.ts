@@ -4,14 +4,14 @@ import { ProfiloComponent } from './components/profilo/profilo.component';
 
 const routes: Routes = [
   {
-    path: 'profilo', component: ProfiloComponent
-
+    path: 'profilo',
+    component: ProfiloComponent,
   },
-  { path: 'profilo/:id', component: ProfiloComponent}
+  { path: 'profilo/:id', component: ProfiloComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

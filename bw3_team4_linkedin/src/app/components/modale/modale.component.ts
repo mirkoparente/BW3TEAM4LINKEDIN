@@ -17,33 +17,43 @@ export class ModaleComponent {
     area: '',
   };
 
-
   constructor(private privateSvc: CardPrincipaleService) {}
 
   ngOnInit() {
     this.privateSvc.getExp().subscribe((res) => {
       this.exp = res;
-      res.forEach((exp) =>exp.startDate=new Date(exp.startDate).toLocaleDateString('it',{year:"numeric",month:"short"}));
+      res.forEach(
+        (exp) =>
+          (exp.startDate = new Date(exp.startDate).toLocaleDateString('it', {
+            year: 'numeric',
+            month: 'short',
+          }))
+      );
       console.log(this.exp);
     });
   }
 
+  // this.privateSvc.getExp().subscribe((res) => {
+  //   this.exp = res;
+  //   res.forEach((exp) =>exp.startDate=new Date(exp.startDate).toLocaleDateString('it',{year:"numeric",month:"short"}));
+  //   console.log(this.exp);
+  // });
 
-    // this.privateSvc.getExp().subscribe((res) => {
-    //   this.exp = res;
-    //   res.forEach((exp) =>exp.startDate=new Date(exp.startDate).toLocaleDateString('it',{year:"numeric",month:"short"}));
-    //   console.log(this.exp);
-    // });
-
-    saveExp() {
-      this.privateSvc.addExp(this.formData).subscribe((exp) => {
-        console.log('registrato', exp);
-        alert('Esperienza aggiunta');
-        this.privateSvc.getExp().subscribe((res) => {
-          this.exp = res;
-          res.forEach((exp) =>exp.startDate=new Date(exp.startDate).toLocaleDateString('it',{year:"numeric",month:"short"}));
-          console.log(this.exp);
-        });
+  saveExp() {
+    this.privateSvc.addExp(this.formData).subscribe((exp) => {
+      console.log('registrato', exp);
+      alert('Esperienza aggiunta');
+      this.privateSvc.getExp().subscribe((res) => {
+        this.exp = res;
+        res.forEach(
+          (exp) =>
+            (exp.startDate = new Date(exp.startDate).toLocaleDateString('it', {
+              year: 'numeric',
+              month: 'short',
+            }))
+        );
+        console.log(this.exp);
       });
+    });
   }
 }

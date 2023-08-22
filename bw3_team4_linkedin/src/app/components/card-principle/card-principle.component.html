@@ -28,7 +28,7 @@
             [src]="profile.image"
             class="card-img-top rounded-pill mt-2 ms-2 position-absolute top-50"
             alt="..."
-            style="width: 130px;"
+            style="width: 130px"
           />
         </div>
         <div class="px-3 mt-5">
@@ -135,16 +135,18 @@
               </div>
             </div>
           </div>
-          <h5 class="card-title mt-3">{{profile.name}} {{profile.surname}}</h5>
+          <h5 class="card-title mt-3">
+            {{ profile.name }} {{ profile.surname }}
+          </h5>
           <p class="p-0 m-0">--</p>
           <a id="a" class="card-text d-lg-none"
-            >{{profile.title}} - {{profile.email}}
+            >{{ profile.title }} - {{ profile.email }}
           </a>
           <div
             class="d-flex justify-content-between align-items-center p-0 m-0"
           >
             <div class="d-flex flex-column justify-content-center">
-              <a id="a" class="card-text"> <br />{{profile.area}} </a>
+              <a id="a" class="card-text"> <br />{{ profile.area }} </a>
               <!-- MODALE INFORMAZINI DI CONTATTO -->
               <a
                 id="info"
@@ -169,7 +171,7 @@
                   <div class="modal-content">
                     <div class="modal-header">
                       <h1 class="modal-title fs-5" id="staticBackdropLabel">
-                        {{profile.name}} {{profile.surname}}
+                        {{ profile.name }} {{ profile.surname }}
                       </h1>
                       <button
                         type="button"
@@ -201,7 +203,7 @@
                         <div>
                           <h6 class="mt-1">il tuo profilo</h6>
                           <a id="info" href=""
-                            >linkedin.com/in/{{profile.username}}</a
+                            >linkedin.com/in/{{ profile.username }}</a
                           >
                         </div>
                       </div>
@@ -224,7 +226,7 @@
                         </div>
                         <div>
                           <h6 class="mt-1">Email</h6>
-                          <a id="info" href="">{{profile.email}}</a>
+                          <a id="info" href="">{{ profile.email }}</a>
                         </div>
                       </div>
                     </div>
@@ -236,10 +238,10 @@
 
             <div class="d-flex flex-column justify-content-center">
               <a id="a" class="card-text d-none d-lg-block mt-1">
-                {{profile.title}}</a
+                {{ profile.title }}</a
               >
               <a id="a" class="card-text d-none d-lg-block">
-                {{profile.email}}</a
+                {{ profile.email }}</a
               >
             </div>
           </div>
@@ -476,9 +478,7 @@
                           aria-label="Close"
                         ></button>
                       </div>
-                      <div class="modal-body">
-                        Salvato con successo
-                      </div>
+                      <div class="modal-body">Salvato con successo</div>
                       <div class="modal-footer">
                         <button
                           type="button"
