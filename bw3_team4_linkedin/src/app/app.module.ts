@@ -10,6 +10,8 @@ import { BottomCardComponent } from "./components/bottom-card/bottom-card.compon
 import { SidebarComponent } from "./components/sidebar/sidebar.component";
 import { ChatComponent } from "./components/chat/chat.component";
 import { FooterComponent } from "./components/footer/footer.component";
+import { ModaleComponent } from './components/modale/modale.component';
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -21,8 +23,9 @@ import { FooterComponent } from "./components/footer/footer.component";
     SidebarComponent,
     ChatComponent,
     FooterComponent,
+    ModaleComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
