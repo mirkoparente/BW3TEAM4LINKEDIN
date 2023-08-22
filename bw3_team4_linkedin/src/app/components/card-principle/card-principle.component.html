@@ -1,22 +1,35 @@
-<div class="bg-body-secondary">
+<div *ngIf="profile" class="bg-body-secondary">
 <div class="container py-2">
 <div class="row h-100">
-<div class=" px-0 col bg-white text-black rounded-4 d-flex justify-content-between flex-column  " *ngIf="profile">
+<div class=" px-0 col bg-white text-black rounded-4 d-flex justify-content-between flex-column  " >
   <!--  -->
   <div id="sfondo" class=" d-flex justify-content-start align-items-end position-relative rounded-top-4">
-    <img
-      [src]="profile.image"
+    <img *ngIf="id == null"
+      [src]="profile.image || ''"
       class="card-img-top rounded-pill mt-2 ms-2 position-absolute top-50"
       alt="..."
       style="width: 150px;"
     />
+    <img *ngIf="!(id == null)"
+    [src]="profileDataId.image || '' "
+    class="card-img-top rounded-pill mt-2 ms-2 position-absolute top-50"
+    alt="..."
+    style="width: 150px;"
+  />
   </div>
   <div class="px-3 mt-5">
-    <h5 class="card-title mt-3">{{profile.name}} {{profile.surname}}</h5>
+    <h5 *ngIf="id == null" class="card-title mt-3">{{profile.name}} {{profile.surname}}</h5>
+    <h5 *ngIf="!(id == null)" class="card-title mt-3">{{profileDataId.name}} {{profileDataId.surname}}</h5>
+
     <p>--</p>
-    <a id="a" class="card-text"> {{profile.title}}<br /> </a>
-    <a id="a" class="card-text">
+    <a *ngIf="id == null" id="a" class="card-text"> {{profile.title}}<br /> </a>
+    <a *ngIf="!(id == null)" id="a" class="card-text"> {{profileDataId.title}}<br /> </a>
+
+    <a *ngIf="id == null" id="a" class="card-text">
       {{profile.email}}
+    </a>
+    <a *ngIf="!(id == null)" id="a" class="card-text">
+      {{profileDataId.email}}
     </a>
     <br />
     <!-- MODALE INFORMAZINI DI CONTATTO -->

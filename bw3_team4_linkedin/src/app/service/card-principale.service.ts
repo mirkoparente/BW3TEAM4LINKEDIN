@@ -30,4 +30,15 @@ export class CardPrincipaleService {
       },
     })
   }
+
+  getIdProfile(userId:string) {
+
+    const urlId: string = `https://striveschool-api.herokuapp.com/api/profile/${userId}`
+
+    return this.http.get<Profilo>(urlId, {
+      headers: {
+        Authorization: `Bearer ${this.private}`,
+      },
+    })
+  }
 }

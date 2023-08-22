@@ -1,6 +1,6 @@
 <div class="d-flex flex-column gap-2 align-items-center pb-5 bg-linkedin">
   <!--------------------[Card Profilo lingua e URL]----------------------->
-  <div class="card" style="width: 20rem">
+  <div class="card" style="width: 18rem">
     <div class="card-body">
       <div class="d-flex justify-content-between align-items-center">
         <!-- left -->
@@ -37,7 +37,7 @@
         <div>
           <h4 class="card-title">Public profile & URL</h4>
           <h6 class="card-subtitle mb-2 text-secondary">
-            www.linkedin.com/in/nicolas-mastropietro-172348113
+            <!-- {{mineProfile.email}} -->
           </h6>
         </div>
         <!-- right -->
@@ -66,7 +66,7 @@
   <!------------------------------------------------------------------->
 
   <!--------------------[Card Persone che potresti conoscere]----------------------->
-  <div class="card" style="width: 20rem">
+  <div class="card" style="width: 18rem">
     <div class="card-body">
       <h5 class="card-title fw-semibold mb-4">
         Persone che potresti conoscere
@@ -80,13 +80,14 @@
           <img
             class="w-25 h-25 img-thumbnail rounded-circle"
             src="{{ profile.image }}"
-            alt="profile-image"
+            alt=""
           />
 
           <div>
             <h5>
               <a
-                href="#"
+
+                routerLink="/profilo/{{profile._id}}"
                 class="fw-semibold mb-1 text-black link-underline link-underline-opacity-0 text text-link"
                 >{{ profile.name }} {{ profile.surname }}</a
               >
@@ -125,13 +126,13 @@
             <img
               class="w-25 h-25 img-thumbnail rounded-circle"
               src="{{ profile.image }}"
-              alt="profile-image"
+              alt=""
             />
 
             <div>
               <h5>
                 <a
-                  href="#"
+                routerLink="/profilo/{{profile._id}}"
                   class="fw-semibold mb-1 text-black link-underline link-underline-opacity-0 text text-link"
                   >{{ profile.name }} {{ profile.surname }}</a
                 >
@@ -213,7 +214,7 @@
   <!------------------------------------------------------------------->
 
   <!--------------------[Potrebbe interessarti]----------------------->
-  <div class="card" style="width: 20rem">
+  <div class="card" style="width: 18rem">
     <div class="card-body">
       <h5 class="card-title fw-semibold mb-4">Potrebbe interessarti</h5>
 
@@ -320,4 +321,21 @@
       </div>
     </div>
   </div>
+
+
+  <!--------------------[immagine link]----------------------->
+  <div class="card imgLink-card" style="width: 18rem">
+
+
+    <a href="#">
+      <img class="img-fluid" src="https://media.licdn.com/media/AAYQAgTPAAgAAQAAAAAAADVuOvKzTF-3RD6j-qFPqhubBQ.png" alt="see who's hiring">
+    </a>
+
+  </div>
+
+
+
+
+
+
 </div>
