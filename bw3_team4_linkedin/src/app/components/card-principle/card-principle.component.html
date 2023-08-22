@@ -1,5 +1,6 @@
-<div class="card border m-3 rounded-3" *ngIf="profile">
-  <!--  -->
+<!-- CARD  -->
+<!-- *ngIf="profile" -->
+<div class="card border m-3 rounded-3">
   <div id="sfondo">
     <img
       [src]="profile.image"
@@ -9,6 +10,107 @@
     />
   </div>
   <div class="card-body">
+    <!-- MODALE MATITA -->
+    <div class="d-flex justify-content-end">
+      <button
+        type="button"
+        class="btn btn-primary border-white bg-white text-dark text-end"
+        data-bs-toggle="modal"
+        data-bs-target="#esempModal"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          data-supported-dps="24x24"
+          fill="currentColor"
+          class="mercado-match"
+          width="24"
+          height="24"
+          focusable="false"
+        >
+          <path
+            d="M21.13 2.86a3 3 0 00-4.17 0l-13 13L2 22l6.19-2L21.13 7a3 3 0 000-4.16zM6.77 18.57l-1.35-1.34L16.64 6 18 7.35z"
+          ></path>
+        </svg>
+      </button>
+    </div>
+    <div
+      class="modal fade"
+      id="esempModal"
+      tabindex="-1"
+      aria-labelledby="esempModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="esempModalLabel">
+              Modifica presentazione
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Nome</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="exampleInputEmail1"
+                  aria-describedby="emailHelp"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label"
+                  >Cognome</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="exampleInputEmail1"
+                  aria-describedby="emailHelp"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label"
+                  >Nome aggiuntivo</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="exampleInputEmail1"
+                  aria-describedby="emailHelp"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label"
+                  >Posizione attuale</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="exampleInputPassword1"
+                />
+              </div>
+              <div class="mb-3 form-check">
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  id="exampleCheck1"
+                />
+              </div>
+              <button type="submit" class="btn btn-primary">Salva</button>
+            </form>
+          </div>
+          <div class="modal-footer"></div>
+        </div>
+      </div>
+    </div>
     <h5 class="card-title">{{profile.name}} {{profile.surname}}</h5>
     <p>--</p>
     <a id="a" class="card-text"> {{profile.title}}<br /> </a>
@@ -104,16 +206,203 @@
   </div>
 
   <div class="d-flex justify-content-center mt-2">
-    <a href="#" id="button1" class="btn btn-primary fw-bold me-1"
-      >Disponibile per</a
+    <!-- DROPDOWN DISPONIBILE PER -->
+    <div class="dropdown" id="dropdown">
+      <button
+        class="btn border-white dropdown-toggle"
+        type="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        <a href="#" id="button1" class="btn btn-primary fw-bold me-1"
+          >Disponibile per</a
+        >
+      </button>
+      <ul class="dropdown-menu">
+        <li>
+          <a class="dropdown-item" href="#">
+            <p class="fw-bold">Cambiare lavoro</p>
+            <p>
+              Mostra ai recruiter e ad altri che sei <br />disponibile a
+              lavorare
+            </p></a
+          >
+        </li>
+        <li>
+          <a class="dropdown-item" href="#">
+            <p class="fw-bold">Selezione del personale</p>
+            <p>
+              Fai sapere che stai facendo <br />
+              selezione e attrai candidati <br />
+              qualificati
+            </p></a
+          >
+        </li>
+        <li>
+          <a class="dropdown-item" href="#">
+            <p class="fw-bold">Servizi offerti</p>
+            <p>
+              Metti in risalto i servizi che offri, <br />
+              così i nuovi clienti potranno trovarti
+            </p></a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <!-- MODALE AGGIUNGI SEZIONE DEL PROFILO -->
+    <button
+      id="button"
+      type="button"
+      class="btn btn-primary"
+      data-bs-toggle="modal"
+      data-bs-target="#exampleModal"
     >
-    <button id="button">
-      <a href="#" class="ms-1 fw-bold">Aggiungi sezione del profilo</a>
+      <a href="#" class="ms-1 p-0 fw-bold">Aggiungi sezione del profilo</a>
     </button>
 
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">
+              Aggiungi al profilo
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <!-- sezione principale -->
+            <div class="dropdown" id="dropdown">
+              <button
+                class="btn btn-white dropdown-toggle w-100 d-flex justify-content-between"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <p class="fw-bold">Sezioni principali</p>
+              </button>
+              <ul class="dropdown-menu w-100">
+                <li>
+                  <a class="dropdown-item" href="#">
+                    <p class="">
+                      Iniziamo dalle basi. Se compili queste sezioni, sarà più
+                      facile trovarti per i <br />
+                      recruiter e le persone che potresti conoscere
+                    </p>
+                    <p>Aggiungi informazioni</p>
+                    <p>Aggiungi grado di formazione</p>
+                    <p>Aggiungi posizione lavorativa</p>
+                    <p>Aggiungi pausa lavorativa</p>
+                    <p>Aggiungi competenze</p>
+                    <p>Sezioni consigliate</p></a
+                  >
+                </li>
+              </ul>
+            </div>
+            <!-- sezione consigliate -->
+            <div class="dropdown" id="dropdown">
+              <button
+                class="btn btn-white dropdown-toggle w-100 d-flex justify-content-between"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <p class="fw-bold">Sezioni consigliate</p>
+              </button>
+              <ul class="dropdown-menu w-100">
+                <li>
+                  <a class="dropdown-item" href="#">
+                    <p>
+                      Completando queste sezioni aumenterai la tua credibilità e
+                      potrai accedere a <br />più opportunità
+                    </p>
+                    <p>Aggiungi elementi in primo piano</p>
+                    <p>Aggiungi licenze e certificazioni</p>
+                    <p>Aggiungi progetti</p>
+                    <p>Aggiungi corsi</p>
+                    <p>Aggiungi referenze</p></a
+                  >
+                </li>
+              </ul>
+            </div>
+            <!-- altro -->
+            <div class="dropdown" id="dropdown">
+              <button
+                class="btn btn-white dropdown-toggle w-100 d-flex justify-content-between"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <p class="fw-bold">Altro</p>
+              </button>
+              <ul class="dropdown-menu w-100">
+                <li>
+                  <a class="dropdown-item" href="#">
+                    <p>
+                      Conferisci ancora più personalità al tuo profilo. Queste
+                      sezioni ti aiuteranno a <br />
+                      espandere la tua rete e a instaurare più relazioni
+                      lavorative.
+                    </p>
+                    <p>Aggiungi esperienza di volontariato</p>
+                    <p>Aggiungi pubblicazioni</p>
+                    <p>Aggiungi brevetti</p>
+                    <p>Aggiungi riconoscimenti e premi</p>
+                    <p>Aggiungi votazioni esame</p></a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DROPDOWN ALTRO -->
+      <!-- <div class="dropdown">
+        <a
+          class="btn btn-white text-secondary dropdown-toggle p-0 rounded-5"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <button id="altro" class="btn fw-bold bg-secondary">...</button>
+        </a>
+        <ul class="dropdown-menu">
+          <li>
+            <a class="dropdown-item" href="#"
+              ><i class="bi bi-arrow-90deg-right"></i> Invia il profilo in un
+              messaggio</a
+            >
+          </li>
+          <li>
+            <a class="dropdown-item" href="#">
+              <i class="bi bi-download"></i> Salva come pdf</a
+            >
+          </li>
+          <li>
+            <a class="dropdown-item" href="#"
+              ><i class="bi bi-info-square-fill"></i> Informazioni su questo
+              profilo</a
+            >
+          </li>
+        </ul>
+      </div> -->
+    </div>
+    <!-- DROPDOWN ALTRO -->
     <div class="dropdown">
       <a
-        class="btn btn-white text-secondary dropdown-toggle p-0 rounded-5"
+        class="btn btn-white border-white rounded-5 text-secondary dropdown-toggle p-0 rounded-5"
         type="button"
         data-bs-toggle="dropdown"
         aria-expanded="false"
@@ -133,14 +422,59 @@
           >
         </li>
         <li>
-          <a class="dropdown-item" href="#"
-            ><i class="bi bi-info-square-fill"></i> Informazioni su questo
-            profilo</a
+          <!-- MODAL(...) -->
+          <button
+            type="button"
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#eseModal"
           >
+            <a class="dropdown-item" href="#"
+              ><i class="bi bi-info-square-fill"></i> Informazioni su questo
+              profilo</a
+            >
+          </button>
+
+          <div
+            class="modal fade"
+            id="eseModal"
+            tabindex="-1"
+            aria-labelledby="eseModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="eseModalLabel">
+                    Informazioni su questo profilo
+                  </h1>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <p><span class="fw-bold">Utende da</span>: 2020</p>
+                  <p>
+                    <span class="fw-bold">Informazioni di contatto</span>:
+                    aggiornate 3 mesi fa
+                  </p>
+                  <p>
+                    <span class="fw-bold">Foto del profilo</span>: aggiornate
+                    più di un anno fa
+                  </p>
+                </div>
+                <div class="modal-footer"></div>
+              </div>
+            </div>
+          </div>
         </li>
       </ul>
     </div>
   </div>
+  <!-- CAROUSEL -->
   <div class="d-none d-lg-flex justify-content-lg-between">
     <div class="border mt-2 rounded-3 w-50 p-1">
       <p>
@@ -155,6 +489,7 @@
       </p>
     </div>
   </div>
+
   <div id="carouselExample" class="carousel slide d-lg-none">
     <div class="carousel-inner">
       <div class="carousel-item active border mt-2 rounded-3">
@@ -190,9 +525,5 @@
     </button>
   </div>
 </div>
-<!-- CAROUSEL -->
 
 <!-- </div> -->
-<!-- </div> -->
-
-<!-- Button trigger modal -->
