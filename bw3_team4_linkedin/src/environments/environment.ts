@@ -1,3 +1,0 @@
-export const environment = {
-  private:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGUzMTA1ZDFmMTc1YzAwMTRjNTU4YjgiLCJpYXQiOjE2OTI2MDI0NjEsImV4cCI6MTY5MzgxMjA2MX0.CxhRUk0nr8NyazZ_qzLiJx0pw_0O2Km8Y8SZMURZwZA"
-};
