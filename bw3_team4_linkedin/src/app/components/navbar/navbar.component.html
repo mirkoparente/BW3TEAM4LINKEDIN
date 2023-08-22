@@ -1,47 +1,52 @@
 <nav>
   <div class="navbar-left">
-    <a href=""
+    <a
       ><img
         class="logo"
         src="https://cdn4.iconfinder.com/data/icons/social-media-flat-7/64/Social-media_LinkedIn-512.png"
         alt=""
     /></a>
-    <div class="search-box">
+    <div [ngClass]="status2 ? 'search-box' : 'search-box2'">
       <i class="bi bi-search"></i>
       <input type="search" placeholder="Search" />
+      <i
+        class="bi bi-x-lg"
+        [ngClass]="status2 ? 'd-none' : ''"
+        (click)="clickEvent2()"
+      ></i>
     </div>
   </div>
   <div class="navbar-center">
-    <ul>
-      <li class="s-i d-block d-md-none">
-        <i class="bi bi-search"></i>
+    <ul [ngClass]="status2 ? '' : 'd-none'">
+      <li class="d-block d-md-none">
+        <i class="bi bi-search" (click)="clickEvent2()"></i>
       </li>
       <li>
-        <a href="#">
+        <a>
           <i class="bi bi-house-door-fill"></i>
           <p>Home</p>
         </a>
       </li>
       <li>
-        <a href="#">
+        <a>
           <i class="bi bi-people-fill"></i>
           <p>Rete</p>
         </a>
       </li>
       <li>
-        <a href="#">
+        <a>
           <i class="bi bi-briefcase-fill"></i>
           <p>Lavoro</p>
         </a>
       </li>
       <li>
-        <a href="#">
+        <a>
           <i class="bi bi-chat-dots"></i>
           <p>Messaggistica</p>
         </a>
       </li>
       <li>
-        <a href="#">
+        <a>
           <i class="bi bi-bell-fill"></i>
           <p>Notifiche</p>
         </a>
@@ -54,7 +59,7 @@
       alt=""
       class="profile-logo"
     />
-    <p>Tu</p>
+    <p>Tu <i class="bi bi-caret-down-fill"></i></p>
   </div>
   <!--dropdown profile-->
   <div class="profile-menu-wrap" [ngClass]="status ? 'open-menu' : ''">
@@ -67,108 +72,118 @@
         <div>
           <h3>Nome Cognome</h3>
           <p>Info varie</p>
-          <button class="button-p">visualizzo profilo</button>
         </div>
       </div>
+      <button class="button-p">visualizzo profilo</button>
       <hr />
       <h5>Account</h5>
-      <p>Impostazioni</p>
-      <p>Guida</p>
-      <p>Lingua</p>
+      <a>Impostazioni</a><br />
+      <a>Guida</a><br />
+      <a>Lingua</a><br />
       <hr />
       <h5>Gestisci</h5>
-      <p>Post e attività</p>
-      <p>Post e attività</p>
+      <a>Post e attività</a><br />
+      <a>Post e attività</a><br />
       <hr />
-      <p>Esci</p>
+      <a>Esci</a>
     </div>
   </div>
-  <div class="navbar-over">
-    <i class="bi bi-table fs-1 ms-5"></i>
-    <p class="ms-4">Per le aziende</p>
+  <!--offcanvas-->
+  <div
+    class="navbar-over"
+    data-bs-toggle="offcanvas"
+    data-bs-target="#offcanvasRight"
+  >
+    <i class="bi bi-grid-3x3-gap-fill"></i>
+    <p>Per le aziende <i class="bi bi-caret-down-fill"></i></p>
+  </div>
+
+  <div
+    class="offcanvas offcanvas-end"
+    tabindex="-1"
+    id="offcanvasRight"
+    aria-labelledby="offcanvasRightLabel"
+  >
+    <div class="offcanvas-header me-3">
+      <h4 class="offcanvas-title m-3" id="offcanvasRightLabel">
+        Per le aziende
+      </h4>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="offcanvas"
+        aria-label="Close"
+      ></button>
+    </div>
+    <div class="offcanvas-body">
+      <div class="card">
+        <div class="card-header bg-transparent">
+          Scopri altri prodotti LinkedIn
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Success card title</h5>
+          <p class="card-text">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header bg-transparent">
+          <h5 class="card-title">Assistenza alle aziende di LinkedIn</h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>
+              <a>
+                <h3>Talent Solution</h3>
+                <p>Trova, attrai e assumi</p>
+              </a>
+            </li>
+            <li>
+              <a>
+                <h3>Talent Solution</h3>
+                <p>Trova, attrai e assumi</p>
+              </a>
+            </li>
+            <li>
+              <a>
+                <h3>Talent Solution</h3>
+                <p>Trova, attrai e assumi</p>
+              </a>
+            </li>
+            <li>
+              <a>
+                <h3>Talent Solution</h3>
+                <p>Trova, attrai e assumi</p>
+              </a>
+            </li>
+            <li>
+              <a>
+                <h3>Talent Solution</h3>
+                <p>Trova, attrai e assumi</p>
+              </a>
+            </li>
+            <li>
+              <a>
+                <h3>Talent Solution</h3>
+                <p>Trova, attrai e assumi</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="card-footer bg-transparent">
+          <a
+            ><h3>Crea una pagina aziendale <i class="bi bi-plus"></i></h3
+          ></a>
+        </div>
+      </div>
+    </div>
   </div>
 </nav>
 
-<!--<nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#"
-      ><img
-        src="https://cdn4.iconfinder.com/data/icons/social-media-flat-7/64/Social-media_LinkedIn-512.png"
-        alt=""
-    /></a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <form class="d-flex" role="search">
-        <input
-          class="form-control me-2"
-          type="search"
-          placeholder="Search"
-          aria-label="Search"
-        />
-      </form>
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">
-            <i class="bi bi-house-door-fill d-block"></i>
-            Home
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <i class="bi bi-people-fill d-block"></i>
-            Rete
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <i class="bi bi-briefcase-fill d-block"></i>
-            Lavoro
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <i class="bi bi-chat-dots d-block"></i>
-            Messaggistica
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <i class="bi bi-bell-fill d-block"></i>
-            Notifiche
-          </a>
-        </li>
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            <i class="bi bi-person-circle d-block"></i> Tu
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+<!--<div class="navbar-over">
+  <i class="bi bi-table fs-1 ms-5"></i>
+  <p class="ms-4">Per le aziende <i class="bi bi-caret-down-fill"></i></p>
+</div>
 -->
