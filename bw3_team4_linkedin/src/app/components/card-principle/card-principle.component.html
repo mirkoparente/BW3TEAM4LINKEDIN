@@ -1,14 +1,24 @@
+<<<<<<< HEAD
 <!-- CARD  -->
 <!-- *ngIf="profile" -->
 <div class="card border m-3 rounded-3">
   <div id="sfondo">
+=======
+<div class="bg-body-secondary">
+<div class="container py-2">
+<div class="row h-100">
+<div class=" px-0 col bg-white text-black rounded-4 d-flex justify-content-between flex-column  " *ngIf="profile">
+  <!--  -->
+  <div id="sfondo" class=" d-flex justify-content-start align-items-end position-relative rounded-top-4">
+>>>>>>> main
     <img
       [src]="profile.image"
-      class="card-img-top rounded-5 mt-2 ms-2"
+      class="card-img-top rounded-pill mt-2 ms-2 position-absolute top-50"
       alt="..."
-      style="width: 70px;"
+      style="width: 150px;"
     />
   </div>
+<<<<<<< HEAD
   <div class="card-body">
     <!-- MODALE MATITA -->
     <div class="d-flex justify-content-end">
@@ -112,6 +122,10 @@
       </div>
     </div>
     <h5 class="card-title">{{profile.name}} {{profile.surname}}</h5>
+=======
+  <div class="px-3 mt-5">
+    <h5 class="card-title mt-3">{{profile.name}} {{profile.surname}}</h5>
+>>>>>>> main
     <p>--</p>
     <a id="a" class="card-text"> {{profile.title}}<br /> </a>
     <a id="a" class="card-text">
@@ -205,6 +219,7 @@
     </div>
   </div>
 
+<<<<<<< HEAD
   <div class="d-flex justify-content-center mt-2">
     <!-- DROPDOWN DISPONIBILE PER -->
     <div class="dropdown" id="dropdown">
@@ -259,6 +274,14 @@
       data-bs-target="#exampleModal"
     >
       <a href="#" class="ms-1 p-0 fw-bold">Aggiungi sezione del profilo</a>
+=======
+  <div class="d-flex justify-content-start mt-3">
+    <a href="#" id="button1" class="btn btn-primary fw-bold ms-2"
+      >Disponibile per</a
+    >
+    <button id="button" class="ms-3">
+      <a href="#" class="ms-1 fw-bold">Aggiungi sezione del profilo</a>
+>>>>>>> main
     </button>
 
     <div
@@ -402,12 +425,17 @@
     <!-- DROPDOWN ALTRO -->
     <div class="dropdown">
       <a
+<<<<<<< HEAD
         class="btn btn-white border-white rounded-5 text-secondary dropdown-toggle p-0 rounded-5"
+=======
+        class="btn btn-white text-secondary ms-3 p-0 rounded-5"
+>>>>>>> main
         type="button"
         data-bs-toggle="dropdown"
         aria-expanded="false"
       >
-        <button id="altro" class="btn fw-bold bg-secondary">...</button>
+        <button id="altro" class="btn btn-light border-secondary rounded-5"
+>...</button>
       </a>
       <ul class="dropdown-menu">
         <li>
@@ -474,15 +502,20 @@
       </ul>
     </div>
   </div>
+<<<<<<< HEAD
   <!-- CAROUSEL -->
   <div class="d-none d-lg-flex justify-content-lg-between">
     <div class="border mt-2 rounded-3 w-50 p-1">
+=======
+  <div class="d-none d-lg-flex justify-content-lg-between mt-3">
+    <div class="border mt-2 rounded-3 w-50 p-1 ps-3">
+>>>>>>> main
       <p>
         <span class="fw-bold">Fai sapere che stai facendo selezione</span> e
         attrai candidati qualificati
       </p>
     </div>
-    <div class="border mt-2 rounded-3 w-50 p-1">
+    <div class="border mt-2 rounded-3 w-50 p-1 ps-3">
       <p>
         <span class="fw-bold">Metti in risalto i servizi</span> che offri, così
         tu e la tua azienda potrete appparire nei risultati di ricerca
@@ -525,5 +558,12 @@
     </button>
   </div>
 </div>
+<<<<<<< HEAD
+=======
+</div>
+</div>
+</div>
+<!-- CAROUSEL -->
+>>>>>>> main
 
 <!-- </div> -->
