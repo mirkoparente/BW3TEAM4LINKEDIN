@@ -11,11 +11,10 @@ import { Data } from '@angular/router';
 export class BottomCardComponent {
   exp!:Exp[]
 
-  constructor(private privateSvc: CardPrincipaleService) {}
 
 
 
 
- 
+
 
 }
