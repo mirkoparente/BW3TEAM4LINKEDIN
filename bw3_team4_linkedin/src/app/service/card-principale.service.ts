@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { Profilo } from "../profilo";
+import { Post, Profilo } from "../profilo";
 import { Exp } from "../profilo";
 import { addExp } from "../profilo";
 import { HttpClient } from "@angular/common/http";
@@ -20,6 +20,8 @@ export class CardPrincipaleService {
 
   urlExperience:string= `https://striveschool-api.herokuapp.com/api/profile/${this.userId}/experiences`
 
+  urlPost:string=" https://striveschool-api.herokuapp.com/api/posts/"
+
   constructor(private http: HttpClient) {}
 
   get(): Observable<Profilo> {
@@ -29,6 +31,15 @@ export class CardPrincipaleService {
 
     return this.http.get<Profilo>(this.apiUrl, { headers });
   }
+  getPost(): Observable<Post[]> {
+    const headers = {
+      Authorization: `Bearer ${this.appId}`,
+    };
+
+    return this.http.get<Post[]>(this.urlPost, { headers });
+  }
+
+
 
   getAllProfile(): Observable<Profilo[]> {
     const headers = {
@@ -65,7 +76,7 @@ export class CardPrincipaleService {
     })
   }
 
-  
+
 }
 
 
