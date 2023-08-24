@@ -32,7 +32,14 @@ export interface addExp {
   area: string;
 }
 
-export interface Post{
-  text:string;
-  image:string;
+export interface Post {
+  text: string;
+  image: string;
+  _id: any;
+}
+
+export interface Comments {
+  comment: string;
+  rate: string;
+  elementId: string;
 }
