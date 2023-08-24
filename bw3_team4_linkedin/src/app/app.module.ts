@@ -13,6 +13,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ModaleComponent } from './components/modale/modale.component';
 import { FormsModule } from "@angular/forms";
 import { HomeComponent } from './components/home/home.component';
+import { NewPostComponent } from './components/new-post/new-post.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { HomeComponent } from './components/home/home.component';
     FooterComponent,
     ModaleComponent,
     HomeComponent,
+    NewPostComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
