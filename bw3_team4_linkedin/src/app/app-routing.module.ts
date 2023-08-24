@@ -11,7 +11,10 @@ const routes: Routes = [
 
   },
   {
-  path:"modificaExp", component:ModificaExpComponent
+  path:"modifica-exp", component:ModificaExpComponent
+  },
+  {
+  path:"modifica-exp/:id", component:ModificaExpComponent
   },
   {
     path: 'profilo', component: ProfiloComponent

@@ -26,7 +26,7 @@
               </div>
             </div> -->
           <!-- </div> -->
-          <button routerLink="/modificaExp" class="btn btn-light rounded-pill p-3">
+          <button routerLink="/modifica-exp/{{profile._id}}" class="btn btn-light rounded-pill p-3">
             <i
               type="edit"
               size="medium"
@@ -52,7 +52,7 @@
         <div class="d-flex" *ngFor="let exp of exp">
           <img
             width="48"
-            src="{{ exp.image }}"
+            src="https://media.licdn.com/dms/image/C4E0BAQHYgix-Ynux1A/company-logo_100_100/0/1646830188434?e=1700697600&v=beta&t=z9BNcnl0FarYAg-i8zbpPKZXfr036nQh_kmNDfMRJtc"
             loading="lazy"
             height="48"
             alt="Logo Epicode"
@@ -339,7 +339,7 @@
           <div class="mb-3">
             <h4>Media</h4>
             <p>
-              Aggiungi contenuti multimediali come immagini, docmenti, siti o
+              Aggiungi contenuti multimediali come immagini, documenti, siti o
               presentazioni. Scopri di più sui
               <a href="#" class="text-decoration-none text-primary"
                 >tipi di file multimediali supportati</a
