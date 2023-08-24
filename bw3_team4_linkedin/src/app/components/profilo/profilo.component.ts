@@ -6,18 +6,8 @@ import { CardPrincipaleService } from 'src/app/service/card-principale.service';
 @Component({
   selector: 'app-profilo',
   templateUrl: './profilo.component.html',
-  styleUrls: ['./profilo.component.scss']
+  styleUrls: ['./profilo.component.scss'],
 })
 export class ProfiloComponent {
-
-
-
-  constructor(
-   ) {
-
-  }
-
-
-
-
+  constructor() {}
 }
