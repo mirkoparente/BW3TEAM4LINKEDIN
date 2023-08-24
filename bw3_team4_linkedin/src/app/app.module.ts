@@ -11,7 +11,8 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { ChatComponent } from './components/chat/chat.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ModaleComponent } from './components/modale/modale.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule } from "@angular/forms";
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { FormsModule } from '@angular/forms';
     ChatComponent,
     FooterComponent,
     ModaleComponent,
+    HomeComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],

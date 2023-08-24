@@ -31,3 +31,8 @@ export interface addExp {
   description: string;
   area: string;
 }
+
+export interface Post{
+  text:string;
+  image:string;
+}

@@ -1,10 +1,10 @@
-import { Injectable } from '@angular/core';
-import { Profilo } from '../profilo';
-import { Exp } from '../profilo';
-import { addExp } from '../profilo';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment.development';
+import { Injectable } from "@angular/core";
+import { Post, Profilo } from "../profilo";
+import { Exp } from "../profilo";
+import { addExp } from "../profilo";
+import { HttpClient } from "@angular/common/http";
+import { Observable } from "rxjs";
+import { environment } from "src/environments/environment.development";
 
 @Injectable({
   providedIn: 'root',
@@ -16,9 +16,11 @@ export class CardPrincipaleService {
   private apiUrlProfile: string =
     'https://striveschool-api.herokuapp.com/api/profile/';
 
-  userId: string = '64e3105d1f175c0014c558b8';
+  userId:string = "64e5f11609d5da00144d42a0"
 
   urlExperience: string = `https://striveschool-api.herokuapp.com/api/profile/${this.userId}/experiences`;
+
+  urlPost:string=" https://striveschool-api.herokuapp.com/api/posts/"
 
   constructor(private http: HttpClient) {}
 
@@ -29,6 +31,15 @@ export class CardPrincipaleService {
 
     return this.http.get<Profilo>(this.apiUrl, { headers });
   }
+  getPost(): Observable<Post[]> {
+    const headers = {
+      Authorization: `Bearer ${this.appId}`,
+    };
+
+    return this.http.get<Post[]>(this.urlPost, { headers });
+  }
+
+
 
   getAllProfile(): Observable<Profilo[]> {
     const headers = {
@@ -63,4 +74,6 @@ export class CardPrincipaleService {
       },
     });
   }
+
+
 }
