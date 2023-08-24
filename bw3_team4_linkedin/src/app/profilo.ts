@@ -34,5 +34,9 @@ export interface addExp {
 
 export interface Post{
   text:string;
-  image:string;
+  id: string;
+  username:string;
+  createdAt: string;
+  updatedAt: string;
+  user: Profilo
 }
