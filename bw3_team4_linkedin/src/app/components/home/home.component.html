@@ -6,7 +6,7 @@
   </div>
 </div>
     <div class="px-3 col-12 bg-white text-black rounded-4 py-5 fs-6 mt-2 " *ngFor="let item of post">
-      <img src="{{item.image}}" alt="image">
+      <img src="{{item.image}}" alt="image" *ngIf="item.image">
      <p>{{item.text}}</p>
       <div class="d-flex justify-content-between align-items-center">
         <div>

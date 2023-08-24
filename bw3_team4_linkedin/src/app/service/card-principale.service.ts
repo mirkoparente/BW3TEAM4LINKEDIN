@@ -16,7 +16,7 @@ export class CardPrincipaleService {
   private apiUrlProfile: string =
     "https://striveschool-api.herokuapp.com/api/profile/";
 
-  userId:string = "64e3105d1f175c0014c558b8"
+  userId:string = "64e5f11609d5da00144d42a0"
 
   urlExperience:string= `https://striveschool-api.herokuapp.com/api/profile/${this.userId}/experiences`
 
