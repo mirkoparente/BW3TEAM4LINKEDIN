@@ -1,4 +1,4 @@
-import { Post, Profilo } from "src/app/profilo";
+import { Comments, Post, Profilo } from "src/app/profilo";
 import { Component, Input } from "@angular/core";
 import { CardPrincipaleService } from "src/app/service/card-principale.service";
 
@@ -9,10 +9,18 @@ import { CardPrincipaleService } from "src/app/service/card-principale.service";
 })
 export class CommentiPostComponent {
   @Input() post!: Post;
+
+  @Input() id!: string;
   toggle: boolean = false;
   newToggle: boolean = false;
   profileData!: Profilo;
   isPostAdmin: boolean = false;
+
+  commenti: Comments = {
+    comment: "",
+    rate: "1",
+    elementId: "",
+  };
   constructor(private privateSvc: CardPrincipaleService) {}
 
   getProfile() {
@@ -30,4 +38,12 @@ export class CommentiPostComponent {
       this.isPostAdmin = false;
     }
   }
+
+  // getCommenti(id: any) {
+  //   this.commenti.elementId = this.posts[id]._id;
+  //   this.privateSvc.getComment(this.commenti.elementId).subscribe((res) => {
+  //     // this.post=res
+  //     console.log("Res", res);
+  //   });
+  // }
 }
