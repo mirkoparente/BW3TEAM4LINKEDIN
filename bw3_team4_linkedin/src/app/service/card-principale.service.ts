@@ -24,7 +24,7 @@ export class CardPrincipaleService {
 
   urlCommenti: string = "https://striveschool-api.herokuapp.com/api/comments/";
   constructor(private http: HttpClient) {}
-
+  // get profili
   get(): Observable<Profilo> {
     const headers = {
       Authorization: `Bearer ${this.appId}`,
@@ -32,13 +32,19 @@ export class CardPrincipaleService {
 
     return this.http.get<Profilo>(this.apiUrl, { headers });
   }
-
+  //get dei post
   getPost(): Observable<Post[]> {
     const headers = {
       Authorization: `Bearer ${this.appId}`,
     };
 
     return this.http.get<Post[]>(this.urlPost, { headers });
+  }
+  addPost(post: Partial<Post>): Observable<Post> {
+    const headers = {
+      Authorization: `Bearer ${this.appId}`,
+    };
+    return this.http.post<Post>(this.urlPost, post, { headers });
   }
 
   getAllProfile(): Observable<Profilo[]> {
@@ -49,6 +55,7 @@ export class CardPrincipaleService {
     return this.http.get<Profilo[]>(this.apiUrlProfile, { headers });
   }
 
+  //aggiunta esperienza
   addExp(data: addExp): Observable<Exp> {
     return this.http.post<Exp>(this.urlExperience, data, {
       headers: {
@@ -56,7 +63,7 @@ export class CardPrincipaleService {
       },
     });
   }
-
+  //get tutte esperienze
   getExp(): Observable<Exp[]> {
     return this.http.get<Exp[]>(this.urlExperience, {
       headers: {
@@ -64,7 +71,36 @@ export class CardPrincipaleService {
       },
     });
   }
+  //get id delle esperienze
+  getIdExp(expId: string) {
+    const urlUpdateExp = `https://striveschool-api.herokuapp.com/api/profile/${this.userId}/experiences/${expId}`;
+    return this.http.get<Exp>(urlUpdateExp, {
+      headers: {
+        Authorization: `Bearer ${this.appId}`,
+      },
+    });
+  }
 
+  //modifica delle esperienze
+  changeExp(data: addExp, expId: string): Observable<Exp> {
+    const urlUpdate = `https://striveschool-api.herokuapp.com/api/profile/${this.userId}/experiences/${expId}`;
+    return this.http.put<Exp>(urlUpdate, data, {
+      headers: {
+        Authorization: `Bearer ${this.appId}`,
+        "Content-Type": "application/json",
+      },
+    });
+  }
+  //elimina esperienza
+  deleteExp(expId: string): Observable<Exp> {
+    const urlUpdate = `https://striveschool-api.herokuapp.com/api/profile/${this.userId}/experiences/${expId}`;
+    return this.http.delete<Exp>(urlUpdate, {
+      headers: {
+        Authorization: `Bearer ${this.appId}`,
+      },
+    });
+  }
+  //get id dei profili
   getIdProfile(userId: string) {
     const urlId: string = `https://striveschool-api.herokuapp.com/api/profile/${userId}`;
 

@@ -1,0 +1,44 @@
+.img-profilo{
+  height: 50px;
+  border-radius: 100%;
+  margin-right: 20px;
+}
+.main-cont{
+  margin-top: 20px;
+  margin-bottom: 10px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow:  0 5px 10px rgba(0,0,0, 0.1);
+}
+
+
+button{
+  background: #fff;
+  border: none;
+  border-radius: 10px 10px;
+}
+button:hover{
+  background: #cecdcd94;
+}
+
+.div-post{
+  margin: 10px;
+}
+
+.div-post button{
+  border-style: solid;
+  border-width: thin;
+  border-radius: 25px;
+  padding: 10px 70% 10px 10px;
+}
+
+.icons-cont{
+  margin-bottom: 10px;
+}
+.icons-cont button{
+  margin-right: 10px;
+  border: none;
+}
+.icons-cont button span{
+  margin-left: 10px;
+}

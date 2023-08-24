@@ -1,10 +1,14 @@
 .content {
   display: flex;
   flex-direction: row-reverse;
+  position: sticky;
+  bottom: 0;
+  height: 3em;
 }
 
 .dropup {
   width: 20em;
+  background-color: white;
 }
 
 .dropdown-menu {
@@ -16,8 +20,7 @@ p {
 }
 
 .btn {
-  display: flex;
-  justify-content: space-between;
+  background-color: rgb(233, 233, 233);
 }
 
 .icon {
