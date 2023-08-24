@@ -13,7 +13,7 @@ export class HomeComponent {
 
   ngOnInit(){
     this.privateSvc.getPost().subscribe(data => {
-      this.post=data
+      this.post=data.reverse()
       console.log(this.post);
 
     }

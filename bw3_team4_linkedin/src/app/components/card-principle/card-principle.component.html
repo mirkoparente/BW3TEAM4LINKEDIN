@@ -1,44 +1,10 @@
+<!-- CARD  -->
 <div class="bg-body-secondary">
   <div class="container py-2">
-  <div class="row h-100">
-  <div class=" px-0 col bg-white text-black rounded-4 d-flex justify-content-between flex-column  " >
-    <!--  -->
-    <div id="sfondo" class=" d-flex justify-content-start align-items-end position-relative rounded-top-4">
-      <img *ngIf="id == null"
-        [src]="profile.image || ''"
-        class="card-img-top rounded-pill mt-2 ms-2 position-absolute top-50"
-        alt="..."
-        style="width: 150px;"
-      />
-      <img *ngIf="!(id == null)"
-      [src]="profileDataId.image || '' "
-      class="card-img-top rounded-pill mt-2 ms-2 position-absolute top-50"
-      alt="..."
-      style="width: 150px;"
-    />
-    </div>
-    <div class="px-3 mt-5">
-      <h5 *ngIf="id == null" class="card-title mt-3">{{profile.name}} {{profile.surname}}</h5>
-      <h5 *ngIf="!(id == null)" class="card-title mt-3">{{profileDataId.name}} {{profileDataId.surname}}</h5>
+    <div class="row h-100">
+      <div
+        class="px-0 col bg-white text-black rounded-4 d-flex justify-content-between flex-column"
 
-      <p>--</p>
-      <a *ngIf="id == null" id="a" class="card-text"> {{profile.title}}<br /> </a>
-      <a *ngIf="!(id == null)" id="a" class="card-text"> {{profileDataId.title}}<br /> </a>
-
-      <a *ngIf="id == null" id="a" class="card-text">
-        {{profile.email}}
-      </a>
-      <a *ngIf="!(id == null)" id="a" class="card-text">
-        {{profileDataId.email}}
-      </a>
-      <br />
-      <!-- MODALE INFORMAZINI DI CONTATTO -->
-      <a
-        id="info"
-        type="button"
-        class="-primary fw-bold"
-        data-bs-toggle="modal"
-        data-bs-target="#staticBackdrop"
       >
         <!--FOTO COPERTINA E IMG -->
         <div
@@ -59,7 +25,15 @@
             />
           </svg>
           <img
+            *ngIf="id == null"
             [src]="profile.image"
+            class="card-img-top rounded-pill mt-2 ms-2 position-absolute top-50"
+            alt="..."
+            style="width: 130px"
+          />
+          <img
+            *ngIf="!(id == null)"
+            [src]="profileDataId.image"
             class="card-img-top rounded-pill mt-2 ms-2 position-absolute top-50"
             alt="..."
             style="width: 130px"
@@ -110,73 +84,107 @@
                     aria-label="Close"
                   ></button>
                 </div>
-              </div>
-
-              <div class="d-flex flex-column justify-content-center">
-                <a id="a" class="card-text d-none d-lg-block mt-1">
-                  {{profile.title}}</a
-                >
-                <a id="a" class="card-text d-none d-lg-block">
-                  {{profile.email}}</a
-                >
+                <div class="modal-body">
+                  <form>
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label"
+                        >Nome</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="exampleInputEmail1"
+                        aria-describedby="emailHelp"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label"
+                        >Cognome</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="exampleInputEmail1"
+                        aria-describedby="emailHelp"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label"
+                        >Nome aggiuntivo</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="exampleInputEmail1"
+                        aria-describedby="emailHelp"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputPassword1" class="form-label"
+                        >Posizione attuale</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="exampleInputPassword1"
+                      />
+                    </div>
+                    <div class="mb-3 form-check">
+                      <input
+                        type="checkbox"
+                        class="form-check-input"
+                        id="exampleCheck1"
+                      />
+                    </div>
+                    <button type="submit" class="btn btn-primary">Salva</button>
+                  </form>
+                </div>
+                <div class="modal-footer"></div>
               </div>
             </div>
-            <br />
           </div>
-          <h5 class="card-title mt-3">
+          <h5
+          *ngIf="!(id == null)"
+          class="card-title mt-3">
+            {{ profileDataId.name }} {{ profileDataId.surname }}
+          </h5>
+          <h5
+          *ngIf="id == null"
+          class="card-title mt-3">
             {{ profile.name }} {{ profile.surname }}
           </h5>
           <p class="p-0 m-0">--</p>
-          <a id="a" class="card-text d-lg-none"
+          <a
+          *ngIf="id == null"
+          id="a" class="card-text d-lg-none"
             >{{ profile.title }} - {{ profile.email }}
+          </a>
+          <a
+          *ngIf="!(id == null)"
+           id="a" class="card-text d-lg-none"
+            >{{ profileDataId.title }} - {{ profileDataId.email }}
           </a>
           <div
             class="d-flex justify-content-between align-items-center p-0 m-0"
           >
             <div class="d-flex flex-column justify-content-center">
-              <a id="a" class="card-text"> <br />{{ profile.area }} </a>
+              <a
+              *ngIf="id == null"
+              id="a" class="card-text"> <br />{{ profile.area }} </a>
+              <a
+              *ngIf="!(id == null)"
+              id="a" class="card-text"> <br />{{ profileDataId.area }} </a>
+
               <!-- MODALE INFORMAZINI DI CONTATTO -->
               <a
                 id="info"
                 type="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
+                class="-primary fw-bold"
+                data-bs-toggle="modal"
+                data-bs-target="#staticBackdrop"
               >
-                <a href="#" id="button1" class="btn btn-primary fw-bold ms-2"
-                  >Disponibile per</a
-                >
-              </button>
-              <ul class="dropdown-menu" id="ul">
-                <li>
-                  <a class="dropdown-item" href="#">
-                    <p class="fw-bold">Cambiare lavoro</p>
-                    <p>
-                      Mostra ai recruiter e ad altri che sei <br />disponibile a
-                      lavorare
-                    </p></a
-                  >
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">
-                    <p class="fw-bold">Selezione del personale</p>
-                    <p>
-                      Fai sapere che stai facendo <br />
-                      selezione e attrai candidati <br />
-                      qualificati
-                    </p></a
-                  >
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">
-                    <p class="fw-bold">Servizi offerti</p>
-                    <p>
-                      Metti in risalto i servizi che offri, <br />
-                      così i nuovi clienti potranno trovarti
-                    </p></a
-                  >
-                </li>
-              </ul>
-            </div>
+                Informazioni di contatto
+              </a>
 
               <div
                 class="modal fade"
@@ -190,60 +198,34 @@
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h1 class="modal-title fs-5" id="staticBackdropLabel">
+              *ngIf="id == null"
+                      <h1 class="modal-title fs-5" id="staticBackdropLabel"   *ngIf="id == null">
                         {{ profile.name }} {{ profile.surname }}
                       </h1>
+                      <h1 class="modal-title fs-5" id="staticBackdropLabel" *ngIf="!(id == null)">
+                        {{ profileDataId.name }} {{ profileDataId.surname }}
+                      </h1>
                       <button
-                        class="btn btn-white dropdown-toggle w-100 d-flex justify-content-between"
                         type="button"
-                        id="buttonModal"
-                        data-bs-toggle="dropdown"
-                        aria-expanded="false"
-                      >
-                        <p class="fw-bold">Sezioni principali</p>
-                      </button>
-                      <ul class="dropdown-menu w-100">
-                        <li>
-                          <a class="dropdown-item" href="#">
-                            <p class="">
-                              Iniziamo dalle basi. Se compili queste sezioni, sarà
-                              più facile trovarti per i <br />
-                              recruiter e le persone che potresti conoscere
-                            </p>
-                            <p>Aggiungi informazioni</p>
-                            <p>Aggiungi grado di formazione</p>
-                            <p>Aggiungi posizione lavorativa</p>
-                            <p>Aggiungi pausa lavorativa</p>
-                            <p>Aggiungi competenze</p>
-                            <p>Sezioni consigliate</p></a
-                          >
-                        </li>
-                      </ul>
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
                     </div>
-                    <!-- sezione consigliate -->
-                    <div class="dropdown" id="dropdown">
-                      <button
-                        class="btn btn-white dropdown-toggle w-100 d-flex justify-content-between"
-                        type="button"
-                        id="buttonModal"
-                        data-bs-toggle="dropdown"
-                        aria-expanded="false"
-                      >
-                        <p class="fw-bold">Sezioni consigliate</p>
-                      </button>
-                      <ul class="dropdown-menu w-100">
-                        <li>
-                          <a class="dropdown-item" href="#">
-                            <p>
-                              Completando queste sezioni aumenterai la tua
-                              credibilità e potrai accedere a <br />più
-                              opportunità
-                            </p>
-                            <p>Aggiungi elementi in primo piano</p>
-                            <p>Aggiungi licenze e certificazioni</p>
-                            <p>Aggiungi progetti</p>
-                            <p>Aggiungi corsi</p>
-                            <p>Aggiungi referenze</p></a
+                    <div class="modal-body">
+                      <div
+                        class="d-flex align-items-center w-100 justify-content-between"
+                      ></div>
+                      <h5>Informazioni di contatto</h5>
+                      <div class="d-flex align-items-start">
+                        <div class="me-3">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            fill="currentColor"
+                            class="bi bi-linkedin"
+                            viewBox="0 0 16 16"
                           >
                             <path
                               d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"
@@ -252,9 +234,13 @@
                         </div>
                         <div>
                           <h6 class="mt-1">il tuo profilo</h6>
-                          <a id="info" href=""
+                          <a *ngIf="id == null" id="info" href=""
                             >linkedin.com/in/{{ profile.username }}</a
                           >
+
+                          <a  *ngIf="!(id == null)" id="info" href=""
+                          >linkedin.com/in/{{ profileDataId.username }}</a
+                        >
                         </div>
                       </div>
                       <div class="d-flex align-items-start">
@@ -276,21 +262,23 @@
                         </div>
                         <div>
                           <h6 class="mt-1">Email</h6>
-                          <a id="info" href="">{{ profile.email }}</a>
+                          <a id="info" href="" *ngIf="id == null">{{ profile.email }}</a>
+                          <a id="info" href=""  *ngIf="!(id == null)">{{ profileDataId.email }}</a>
+
                         </div>
                       </div>
                     </div>
                   </div>
+                  <div class="modal-footer"></div>
                 </div>
               </div>
             </div>
-
             <div class="d-flex flex-column justify-content-center">
-              <a id="a" class="card-text d-none d-lg-block mt-1">
+              <a id="a" class="card-text d-none d-lg-block mt-1" *ngIf="id == null">
                 {{ profile.title }}</a
               >
-              <a id="a" class="card-text d-none d-lg-block">
-                {{ profile.email }}</a
+              <a id="a" class="card-text d-none d-lg-block" *ngIf="!(id == null)">
+                {{ profileDataId.title }}</a
               >
             </div>
           </div>
@@ -320,125 +308,149 @@
                     lavorare
                   </p></a
                 >
-                  ...
-                </button>
-                <button
-                  id="altro"
-                  class="btn btn-light border-secondary rounded-5 d-none d-lg-block"
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">
+                  <p class="fw-bold">Selezione del personale</p>
+                  <p>
+                    Fai sapere che stai facendo <br />
+                    selezione e attrai candidati <br />
+                    qualificati
+                  </p></a
                 >
-                  Altro
-                </button>
-              </a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a class="dropdown-item" href="#"
-                    ><i class="bi bi-arrow-90deg-right"></i> Invia il profilo in
-                    un messaggio</a
-                  >
-                </li>
-                <li>
-                  <!-- MODAL  SALVA IN PDF -->
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">
+                  <p class="fw-bold">Servizi offerti</p>
+                  <p>
+                    Metti in risalto i servizi che offri, <br />
+                    così i nuovi clienti potranno trovarti
+                  </p></a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- MODALE AGGIUNGI SEZIONE DEL PROFILO -->
+          <button
+            id="button"
+            type="button"
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          >
+            <a class="ms-1 p-0 fw-bold">Aggiungi sezione del profilo</a>
+          </button>
+
+          <div
+            class="modal fade"
+            id="exampleModal"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">
+                    Aggiungi al profilo
+                  </h1>
                   <button
                     type="button"
-                    class="btn"
-                    data-bs-toggle="modal"
-                    data-bs-target="#examplModal"
-                  >
-                    <a class="dropdown-item" href="#">
-                      <i class="bi bi-download"></i> Salva come pdf</a
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <!-- sezione principale -->
+                  <div class="dropdown" id="dropdown">
+                    <button
+                      class="btn btn-white dropdown-toggle w-100 d-flex justify-content-between"
+                      type="button"
+                      id="buttonModal"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
                     >
-                  </button>
-
-                  <div
-                    class="modal fade"
-                    id="examplModal"
-                    tabindex="-1"
-                    aria-labelledby="examplModalLabel"
-                    aria-hidden="true"
-                  >
-                    <div class="modal-dialog">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h1 class="modal-title fs-5" id="examplModalLabel">
-                            Modal title
-                          </h1>
-                          <button
-                            type="button"
-                            class="btn-close"
-                            data-bs-dismiss="modal"
-                            aria-label="Close"
-                          ></button>
-                        </div>
-                        <div class="modal-body">
-                          Salvato con successo
-                        </div>
-                        <div class="modal-footer">
-                          <button
-                            type="button"
-                            class="btn btn-secondary"
-                            data-bs-dismiss="modal"
-                          >
-                            Close
-                          </button>
-                          <button type="button" class="btn btn-primary">
-                            Save changes
-                          </button>
-                        </div>
-                      </div>
-                    </div>
+                      <p class="fw-bold">Sezioni principali</p>
+                    </button>
+                    <ul class="dropdown-menu w-100">
+                      <li>
+                        <a class="dropdown-item" href="#">
+                          <p class="">
+                            Iniziamo dalle basi. Se compili queste sezioni, sarà
+                            più facile trovarti per i <br />
+                            recruiter e le persone che potresti conoscere
+                          </p>
+                          <p>Aggiungi informazioni</p>
+                          <p>Aggiungi grado di formazione</p>
+                          <p>Aggiungi posizione lavorativa</p>
+                          <p>Aggiungi pausa lavorativa</p>
+                          <p>Aggiungi competenze</p>
+                          <p>Sezioni consigliate</p></a
+                        >
+                      </li>
+                    </ul>
                   </div>
-                </li>
-                <li>
-                  <!-- MODAL INFORMAZIONI SU QUESTO PROFILO-->
-                  <button
-                    type="button"
-                    class="btn"
-                    data-bs-toggle="modal"
-                    data-bs-target="#eseModal"
-                  >
-                    <a class="dropdown-item"
-                      ><i class="bi bi-info-square-fill"></i> Informazioni su
-                      questo profilo</a
+                  <!-- sezione consigliate -->
+                  <div class="dropdown" id="dropdown">
+                    <button
+                      class="btn btn-white dropdown-toggle w-100 d-flex justify-content-between"
+                      type="button"
+                      id="buttonModal"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
                     >
-                  </button>
-
-                  <div
-                    class="modal fade"
-                    id="eseModal"
-                    tabindex="-1"
-                    aria-labelledby="eseModalLabel"
-                    aria-hidden="true"
-                  >
-                    <div class="modal-dialog">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h1 class="modal-title fs-5" id="eseModalLabel">
-                            Informazioni su questo profilo
-                          </h1>
-                          <button
-                            type="button"
-                            class="btn-close"
-                            data-bs-dismiss="modal"
-                            aria-label="Close"
-                          ></button>
-                        </div>
-                        <div class="modal-body">
-                          <p><span class="fw-bold">Utende da</span>: 2020</p>
+                      <p class="fw-bold">Sezioni consigliate</p>
+                    </button>
+                    <ul class="dropdown-menu w-100">
+                      <li>
+                        <a class="dropdown-item" href="#">
                           <p>
-                            <span class="fw-bold">Informazioni di contatto</span>:
-                            aggiornate 3 mesi fa
+                            Completando queste sezioni aumenterai la tua
+                            credibilità e potrai accedere a <br />più
+                            opportunità
                           </p>
-                          <p>
-                            <span class="fw-bold">Foto del profilo</span>:
-                            aggiornate più di un anno fa
-                          </p>
-                        </div>
-                        <div class="modal-footer"></div>
-                      </div>
-                    </div>
+                          <p>Aggiungi elementi in primo piano</p>
+                          <p>Aggiungi licenze e certificazioni</p>
+                          <p>Aggiungi progetti</p>
+                          <p>Aggiungi corsi</p>
+                          <p>Aggiungi referenze</p></a
+                        >
+                      </li>
+                    </ul>
                   </div>
-                </li>
-              </ul>
+                  <!-- altro -->
+                  <div class="dropdown" id="dropdown">
+                    <button
+                      class="btn btn-white dropdown-toggle w-100 d-flex justify-content-between"
+                      type="button"
+                      id="buttonModal"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      <p class="fw-bold">Altro</p>
+                    </button>
+                    <ul class="dropdown-menu w-100">
+                      <li>
+                        <a class="dropdown-item" href="#">
+                          <p>
+                            Conferisci ancora più personalità al tuo profilo.
+                            Queste sezioni ti aiuteranno a <br />
+                            espandere la tua rete e a instaurare più relazioni
+                            lavorative.
+                          </p>
+                          <p>Aggiungi esperienza di volontariato</p>
+                          <p>Aggiungi pubblicazioni</p>
+                          <p>Aggiungi brevetti</p>
+                          <p>Aggiungi riconoscimenti e premi</p>
+                          <p>Aggiungi votazioni esame</p></a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -594,54 +606,40 @@
           <div class="carousel-inner">
             <div class="carousel-item active border mt-2 rounded-3">
               <p>
-                <span class="fw-bold">Fai sapere che stai facendo selezione</span>
+                <span class="fw-bold"
+                  >Fai sapere che stai facendo selezione</span
+                >
                 e attrai candidati qualificati
               </p>
             </div>
-            <div class="border mt-2 rounded-3 w-50 p-1 ps-3">
+            <div class="carousel-item border mt-2 rounded-3">
               <p>
-                <span class="fw-bold">Metti in risalto i servizi</span> che offri,
-                così tu e la tua azienda potrete appparire nei risultati di
-                ricerca
+                <span class="fw-bold">Metti in risalto i servizi</span> che
+                offri, così tu e la tua azienda potrete appparire nei risultati
+                di ricerca
               </p>
             </div>
           </div>
-          <div id="carouselExample" class="carousel slide d-lg-none">
-            <div class="carousel-inner">
-              <div class="carousel-item active border mt-2 rounded-3">
-                <p>
-                  <span class="fw-bold"
-                    >Fai sapere che stai facendo selezione</span
-                  >
-                  e attrai candidati qualificati
-                </p>
-              </div>
-              <div class="carousel-item border mt-2 rounded-3">
-                <p>
-                  <span class="fw-bold">Metti in risalto i servizi</span> che
-                  offri, così tu e la tua azienda potrete appparire nei risultati
-                  di ricerca
-                </p>
-              </div>
-            </div>
-            <button
-              class="carousel-control-prev"
-              type="button"
-              data-bs-target="#carouselExample"
-              data-bs-slide="prev"
-            >
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button
-              class="carousel-control-next"
-              type="button"
-              data-bs-target="#carouselExample"
-              data-bs-slide="next"
-            >
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExample"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExample"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
       </div>
+    </div>
+  </div>
+</div>
