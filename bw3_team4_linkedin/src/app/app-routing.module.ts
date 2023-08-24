@@ -1,13 +1,17 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ProfiloComponent } from './components/profilo/profilo.component';
 import { HomeComponent } from './components/home/home.component';
+import { ModificaExpComponent } from './components/modifica-exp/modifica-exp.component';
 
 const routes: Routes = [
   {
     path:"",component: HomeComponent,
     pathMatch: "full",
 
+  },
+  {
+  path:"modificaExp", component:ModificaExpComponent
   },
   {
     path: 'profilo', component: ProfiloComponent

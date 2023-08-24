@@ -65,6 +65,27 @@ export class CardPrincipaleService {
     });
   }
 
+  getIdExp(expId:string){
+    const urlUpdateExp=`https://striveschool-api.herokuapp.com/api/profile/${this.userId}/experiences/${expId}`;
+    return this.http.get<Exp>(urlUpdateExp, {
+      headers: {
+        Authorization: `Bearer ${this.appId}`,
+      },
+    });
+  }
+
+
+  changeExp(data:addExp,expId:string){
+    const urlUpdate=`https://striveschool-api.herokuapp.com/api/profile/${this.userId}/experiences/${expId}`;
+    return this.http.put<Exp>(urlUpdate, {
+      headers: {
+        Authorization: `Bearer ${this.appId}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data),
+    });
+  }
+
   getIdProfile(userId: string) {
     const urlId: string = `https://striveschool-api.herokuapp.com/api/profile/${userId}`;
 
