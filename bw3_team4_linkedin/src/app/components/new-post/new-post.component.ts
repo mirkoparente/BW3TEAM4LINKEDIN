@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Profilo } from 'src/app/profilo';
+import { Post, Profilo } from 'src/app/profilo';
 import { CardPrincipaleService } from 'src/app/service/card-principale.service'
 
 @Component({
@@ -9,6 +9,10 @@ import { CardPrincipaleService } from 'src/app/service/card-principale.service'
 })
 export class NewPostComponent implements OnInit {
   mineProfile!: Profilo;
+  post!: Post;
+  newPost: Partial<Post> =  {
+    text:'',
+  }
   constructor(
     private profileService: CardPrincipaleService,
   ) {}
@@ -23,6 +27,10 @@ export class NewPostComponent implements OnInit {
     });
   }
   onInput(event: Event) {
+    this.newPost.text = (<HTMLInputElement>event.target).value
     console.log((<HTMLInputElement>event.target).value);
+  }
+  addPost(post: Partial<Post>){
+    this.profileService.addPost(this.newPost).subscribe()
   }
 }

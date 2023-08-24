@@ -14,6 +14,8 @@
 
 button{
   background: #fff;
+  border: none;
+  border-radius: 10px 10px;
 }
 button:hover{
   background: #cecdcd94;
@@ -24,6 +26,8 @@ button:hover{
 }
 
 .div-post button{
+  border-style: solid;
+  border-width: thin;
   border-radius: 25px;
   padding: 10px 70% 10px 10px;
 }

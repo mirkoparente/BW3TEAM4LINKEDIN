@@ -1,20 +1,24 @@
 <div class="main-cont">
   <div class="div-post">
     <a class="ms-3">
-      <img class="img-profilo" src="{{ mineProfile.image }}" alt=""
+      <img class="img-profilo" src="{{ mineProfile?.image || '' }}" alt=""
     /></a>
     <button data-bs-toggle="modal" data-bs-target="#postModal">
       <span>Avvia un post</span>
     </button>
   </div>
   <div class="icons-cont">
-    <button class="ms-4"><i class="bi bi-image"></i><span>Foto</span></button>
-    <button><i class="bi bi-play-btn-fill"></i><span>Video</span></button>
-    <button>
-      <i class="bi bi-calendar2-week-fill"></i><span>Evento</span>
+    <button class="ms-4">
+      <i class="bi bi-image text-primary"></i><span>Foto</span>
     </button>
     <button>
-      <i class="bi bi-layout-text-window-reverse"></i
+      <i class="bi bi-play-btn-fill text-success"></i><span>Video</span>
+    </button>
+    <button>
+      <i class="bi bi-calendar2-week-fill text-warning"></i><span>Evento</span>
+    </button>
+    <button>
+      <i class="bi bi-layout-text-window-reverse text-danger"></i
       ><span>Scrivi un articolo</span>
     </button>
   </div>
@@ -25,7 +29,12 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Modal title</h5>
+        <button data-bs-toggle="modal" data-bs-target="#modalSetting">
+          <img src="{{ mineProfile?.image || '' }}" class="img-profilo" />{{
+            mineProfile.username
+          }}
+          <i class="bi bi-caret-down-fill"></i>
+        </button>
         <button
           type="button"
           class="btn-close"
@@ -34,7 +43,11 @@
         ></button>
       </div>
       <div class="modal-body">
-        <input type="text" placeholder="Di cosa vorresti parlare?" />
+        <input
+          type="text"
+          placeholder="Di cosa vorresti parlare?"
+          (input)="onInput($event)"
+        />
       </div>
       <div class="modal-footer">
         <button
@@ -47,10 +60,41 @@
         <button
           type="button"
           class="btn btn-primary text-black"
-          (input)="onInput($event)"
+          (click)="addPost(newPost)"
         >
           Save changes
         </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--secondo modale-->
+<div class="modal" tabindex="-1" id="modalSetting">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <p>Modal body text goes here.</p>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn"
+          data-bs-toggle="modal"
+          data-bs-target="#postModal"
+        >
+          Close
+        </button>
+        <button type="button" class="btn">Save changes</button>
       </div>
     </div>
   </div>

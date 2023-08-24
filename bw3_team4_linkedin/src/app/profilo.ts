@@ -34,7 +34,7 @@ export interface addExp {
 
 export interface Post{
   text:string;
-  id: string;
+  _id: string;
   username:string;
   createdAt: string;
   updatedAt: string;
