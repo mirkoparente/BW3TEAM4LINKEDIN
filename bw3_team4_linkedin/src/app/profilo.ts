@@ -14,6 +14,7 @@ export interface Exp {
   _id: string;
   role: string;
   company: string;
+  image: string;
   startDate: string;
   description: string;
   area: string;

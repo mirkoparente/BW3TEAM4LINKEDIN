@@ -1,4 +1,4 @@
-import { Comments } from "./../../profilo";
+import { Comments, Profilo } from "./../../profilo";
 import { Component } from "@angular/core";
 import { Post } from "src/app/profilo";
 import { CardPrincipaleService } from "src/app/service/card-principale.service";
@@ -11,6 +11,8 @@ import { CardPrincipaleService } from "src/app/service/card-principale.service";
 export class HomeComponent {
   post!: Post[];
   toggle: boolean = false;
+  profileData!: Profilo;
+  isPostAdmin: boolean = false;
 
   commenti: Comments = {
     comment: "",
@@ -33,5 +35,22 @@ export class HomeComponent {
       // this.post=res
       console.log("Res", res);
     });
+  }
+
+  //prendo dati profilo principale
+  getProfile() {
+    this.privateSvc.get().subscribe((resData) => {
+      this.profileData = resData;
+      console.log("profilo", this.profileData);
+    });
+  }
+
+  //controllo se il post è stato scritto dall' utente admin o da altri utenti
+  ceckPostUser(idUserPost: number) {
+    if (idUserPost === this.profileData._id) {
+      this.isPostAdmin = true;
+    } else {
+      this.isPostAdmin = false;
+    }
   }
 }
