@@ -7,18 +7,18 @@ import { Observable } from "rxjs";
 import { environment } from "src/environments/environment.development";
 
 @Injectable({
-  providedIn: "root",
+  providedIn: 'root',
 })
 export class CardPrincipaleService {
   private appId: string = environment.appId;
   private apiUrl: string =
-    "https://striveschool-api.herokuapp.com/api/profile/me";
+    'https://striveschool-api.herokuapp.com/api/profile/me';
   private apiUrlProfile: string =
-    "https://striveschool-api.herokuapp.com/api/profile/";
+    'https://striveschool-api.herokuapp.com/api/profile/';
 
   userId:string = "64e5f11609d5da00144d42a0"
 
-  urlExperience:string= `https://striveschool-api.herokuapp.com/api/profile/${this.userId}/experiences`
+  urlExperience: string = `https://striveschool-api.herokuapp.com/api/profile/${this.userId}/experiences`;
 
   urlPost:string=" https://striveschool-api.herokuapp.com/api/posts/"
 
@@ -49,8 +49,8 @@ export class CardPrincipaleService {
     return this.http.get<Profilo[]>(this.apiUrlProfile, { headers });
   }
 
-  addExp(data:addExp): Observable<Exp>{
-    return this.http.post<Exp>(this.urlExperience,data,{
+  addExp(data: addExp): Observable<Exp> {
+    return this.http.post<Exp>(this.urlExperience, data, {
       headers: {
         Authorization: `Bearer ${this.appId}`,
       },
@@ -62,24 +62,18 @@ export class CardPrincipaleService {
       headers: {
         Authorization: `Bearer ${this.appId}`,
       },
-    })
+    });
   }
 
-  getIdProfile(userId:string) {
-
-    const urlId: string = `https://striveschool-api.herokuapp.com/api/profile/${userId}`
+  getIdProfile(userId: string) {
+    const urlId: string = `https://striveschool-api.herokuapp.com/api/profile/${userId}`;
 
     return this.http.get<Profilo>(urlId, {
       headers: {
         Authorization: `Bearer ${this.appId}`,
       },
-    })
+    });
   }
 
 
 }
-
-
-
-
-

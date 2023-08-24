@@ -1,2 +1,1 @@
-export interface ProfileMe {
-}
+export interface ProfileMe {}

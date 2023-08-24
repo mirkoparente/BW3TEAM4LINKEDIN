@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Profilo } from 'src/app/profilo';
+import { ProfiloService } from 'src/app/profilo.service';
 import { CardPrincipaleService } from 'src/app/service/card-principale.service';
 
 @Component({
