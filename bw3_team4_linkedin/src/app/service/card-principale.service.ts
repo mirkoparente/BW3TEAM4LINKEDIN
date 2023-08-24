@@ -38,7 +38,12 @@ export class CardPrincipaleService {
 
     return this.http.get<Post[]>(this.urlPost, { headers });
   }
-
+  addPost(post: Partial<Post>): Observable<Post> {
+    const headers = {
+      Authorization: `Bearer ${this.appId}`,
+    };
+    return this.http.post<Post>(this.urlPost, post, { headers });
+  }
 
 
   getAllProfile(): Observable<Profilo[]> {

@@ -215,6 +215,9 @@ hr{
   .navbar-center i{
     font-size: 1.8em;
   }
+  .navbar-right p{
+    display: none;
+  }
 }
 @media screen and (max-width: 1000px){
   nav{
@@ -225,9 +228,6 @@ hr{
     display: none;
   }
   .navbar-center a p{
-    display: none;
-  }
-  .navbar-right{
     display: none;
   }
   .search-box {
