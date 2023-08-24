@@ -17,6 +17,7 @@ import { ModificaExpComponent } from "./components/modifica-exp/modifica-exp.com
 import { NewPostComponent } from "./components/new-post/new-post.component";
 import { SideHomeComponent } from "./components/side-home/side-home.component";
 import { CommentiComponent } from "./components/commenti/commenti.component";
+import { CommentiPostComponent } from './components/commenti-post/commenti-post.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { CommentiComponent } from "./components/commenti/commenti.component";
     ModificaExpComponent,
     NewPostComponent,
     SideHomeComponent,
+    CommentiPostComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],

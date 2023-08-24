@@ -10,6 +10,8 @@ import { CardPrincipaleService } from "../../service/card-principale.service";
 export class CommentiComponent {
   @Input() commento!: Comments;
   @Input() id!: string;
+  newToggle: boolean = false;
+  comment!: Comments[];
   newCommento: Comments = {
     comment: "",
     rate: "1",
@@ -21,8 +23,9 @@ export class CommentiComponent {
   postComment(id: any) {
     this.newCommento.elementId = id;
     this.privateSvc.postComment(this.newCommento).subscribe((res) => {
-      // this.commenti = res;
+      this.comment = res;
       console.log("Res", res);
+      console.log(this.comment);
       // console.log(this.commenti.comment);
     });
     //   this.privateSvc.getPost().subscribe((data) => {
