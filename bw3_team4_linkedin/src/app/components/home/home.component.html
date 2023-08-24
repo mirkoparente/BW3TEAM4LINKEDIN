@@ -18,12 +18,16 @@
     >
       <!-- <img src="{{item.image}}" alt="image" class="w-50" *ngIf="item.image"> -->
       <div class="d-flex justify-content-between align-items-center">
-        <h5>
-          {{ item.username }}
-        </h5>
+        <div>
+
+          <img class="w-25" src="{{item.user.image}}" alt="">
+          <h5>
+            {{ item.username }}
+          </h5>
+        </div>
 
         <!-- Dropdown per post non dell' utente -->
-        <div class="dropdown" (click)="ceckPostUser(item.user._id)">
+        <div class="dropdown" >
           <button
             class="btn btn-light text-decoration-none text-secondary"
             type="button"
@@ -47,8 +51,8 @@
             </svg>
           </button>
 
-          <!-- Droopdown per post non dell' utente -->
-          <ul class="dropdown-menu" *ngIf="isPostAdmin == false">
+          <!-- --------------Droopdown per post non dell' utente----------- -->
+          <ul class="dropdown-menu" *ngIf="isPostAdmin[i] == false">
             <li class="d-flex align-items-center">
               <a class="dropdown-item fs-5" href="#"
                 ><i class="bi bi-box-arrow-down me-2"></i>Salva</a
@@ -82,8 +86,8 @@
             </li>
           </ul>
 
-          <!-- dropdown per post dell' utente -->
-          <ul class="dropdown-menu" *ngIf="isPostAdmin == true">
+          <!-- --------------dropdown per post dell' utente----------------- -->
+          <ul class="dropdown-menu" *ngIf="isPostAdmin[i] == true">
             <li class="d-flex align-items-center">
               <a class="dropdown-item fs-5" href="#"
                 ><i class="bi bi-star me-2"></i>Metti in primo piano nella parte
@@ -110,14 +114,14 @@
             </li>
 
             <li class="d-flex align-items-center">
-              <a class="dropdown-item fs-5" href="#"
-                ><i class="bi bi-pen me-2"></i>Modifica post</a
+              <button class="dropdown-item fs-5"
+                ><i class="bi bi-pen me-2"></i>Modifica post</button
               >
             </li>
 
             <li class="d-flex align-items-center">
-              <a class="dropdown-item fs-5" href="#"
-                ><i class="bi bi-trash3 me-2"></i>Elimina post</a
+              <button class="dropdown-item fs-5" href="#"
+                ><i class="bi bi-trash3 me-2"></i>Elimina post</button
               >
             </li>
 
@@ -151,6 +155,8 @@
             </li>
           </ul>
         </div>
+
+
       </div>
       <p>{{ item.text }}</p>
       <div class="d-flex justify-content-between align-items-center">
