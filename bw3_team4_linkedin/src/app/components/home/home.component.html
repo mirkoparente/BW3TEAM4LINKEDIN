@@ -1,7 +1,7 @@
-<div class="container mb-1">
-  <app-side-home></app-side-home>
-  <app-new-post></app-new-post>
-  <div class="row">
+<div class="container mb-1 d-md-flex">
+  <app-side-home class="m-3"></app-side-home>
+  <div class="row m-3">
+    <app-new-post></app-new-post>
     <div class="d-flex justify-content-center align-items-center">
       <div
         class="spinner-grow text-primary p-5 mt-5"
@@ -20,17 +20,17 @@
       <!-- <img src="{{item.image}}" alt="image" class="w-50" *ngIf="item.image"> -->
       <div class="d-flex justify-content-between">
         <div class="d-flex align-self-center">
-          <img class="rounded-circle me-3" src="{{item.user.image}}" alt="" />
+          <img class="rounded-circle me-3" src="{{ item.user.image }}" alt="" />
           <div>
             <h5 class="m-0 p-0">
-              {{ item.user.name }} {{item.user.surname}}
+              {{ item.user.name }} {{ item.user.surname }}
             </h5>
             <div>
-              <p class="fs-6 text-secondary mb-0">{{item.user.title}}</p>
+              <p class="fs-6 text-secondary mb-0">{{ item.user.title }}</p>
             </div>
             <div class="mt-0 pt-0">
               <p class="text-secondary fs-6">
-                {{item.createdAt}}
+                {{ item.createdAt }}
                 <i
                   aria-hidden="true"
                   type="globe-americas"
@@ -296,4 +296,5 @@
       [post]="singlepost"
     ></app-commenti-post>
   </div>
+  <app-sidebar class="m-3 d-none d-md-block"></app-sidebar>
 </div>
