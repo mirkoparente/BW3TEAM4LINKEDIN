@@ -47,7 +47,7 @@
       </div>
     </div>
     <!-- Dropdown per post non dell' utente -->
-    <div class="dropdown" (click)="ceckPostUser(item.user._id)">
+    <div class="dropdown">
       <button
         class="btn btn-light text-decoration-none text-secondary"
         type="button"
@@ -208,10 +208,5 @@
         >Commenta</a
       >
     </div>
-
-    <app-commenti-post
-      *ngFor="let singlepost of post"
-      [post]="singlepost"
-    ></app-commenti-post>
   </div>
 </div>
