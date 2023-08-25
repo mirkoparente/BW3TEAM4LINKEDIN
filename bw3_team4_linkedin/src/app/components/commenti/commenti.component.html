@@ -1,7 +1,7 @@
 <div class="container">
 <div class="d-flex flex-column flex-md-row justify-content-between align-self-center">
 
-    <input
+  <input
     class="form-control h-50 rounded-5 w-100"
       type="text"
       class="rounded-5 me-2"
@@ -18,7 +18,7 @@
     </button>
 
   <a class="btn fs-6" (click)="getCommenti(id)"
-  *ngIf="newCommento.comment">Vedi commenti</a>
+  *ngIf="!newCommento.comment">Vedi commenti</a>
 </div>
 
 <div
@@ -34,7 +34,7 @@
   <div class="dropdown">
     <a
       id="commenti"
-      class="btn dropdown-toggle"
+      class="btn"
       type="button"
       data-bs-toggle="dropdown"
       aria-expanded="false"
@@ -43,8 +43,7 @@
         id="commenti"
         _ngcontent-ng-c1052230211=""
         type="button"
-        data-bs-toggle="dropdown"
-        aria-expanded="false"
+
         class="btn btn-light text-decoration-none text-secondary"
       >
         <svg
@@ -71,22 +70,23 @@
           ></a
         > -->
         <!-- Button trigger modal -->
-        <a
+        <button
           type="button"
           class="btn"
           id="commenti"
           data-bs-toggle="modal"
-          data-bs-target="#exampleModal"
+          data-bs-target="#exampleModal2"
+
         >
           Modifica
-        </a>
+        </button>
 
         <!-- Modal -->
       </li>
       <li>
-        <a class="dropdown-item" href="#" (click)="deleteCommenti(item._id)"
-          >Elimina</a
-        >
+        <button class="dropdown-item" href="#" (click)="deleteCommenti(item._id)"
+          >Elimina</button>
+
       </li>
       <!-- <li><a class="dropdown-item" href="#">Something else here</a></li> -->
       <!-- </li> -->
@@ -94,16 +94,16 @@
   </div>
   <div
     class="modal fade"
-    id="exampleModal"
+    id="exampleModal2"
     tabindex="-1"
-    aria-labelledby="exampleModalLabel"
+    aria-labelledby="exampleModal2Label"
     aria-hidden="true"
   >
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">
-            Modal title
+          <h1 class="modal-title fs-5" id="exampleModal2Label">
+            {{profilo.name}} {{profilo.surname}}
           </h1>
           <button
             type="button"
@@ -115,13 +115,14 @@
         <div class="modal-body">
           <input
             type="text"
-            class="rounded-5 me-2"
+            class="rounded-5 me-2 form-control w-100"
             [(ngModel)]="newCommento.comment"
-            placeholder="Aggiungi un commento..."
+            placeholder="Modifica Commento"
+            value="{{newCommento.comment}}"
           />
           <button
             type="button"
-            class="btn btn-primary rounded-5"
+            class="btn btn-primary rounded-5 mt-3 float-end"
             (click)="putCommenti(item._id)"
           >
             modifica

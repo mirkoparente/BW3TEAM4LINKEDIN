@@ -1,6 +1,7 @@
 import { Component, Input } from "@angular/core";
-import { Commento, Comments, Post } from "../../profilo";
+import { Commento, Comments, Post, Profilo } from "../../profilo";
 import { CardPrincipaleService } from "../../service/card-principale.service";
+import { ProfileMe } from "src/app/interface/profile-me";
 
 @Component({
   selector: "app-commenti",
@@ -8,6 +9,7 @@ import { CardPrincipaleService } from "../../service/card-principale.service";
   styleUrls: ["./commenti.component.scss"],
 })
 export class CommentiComponent {
+  @Input() profilo!:Profilo
   @Input() commento!: Comments;
   @Input() id!: string;
   @Input() newId!: string;
@@ -53,19 +55,27 @@ export class CommentiComponent {
     this.privateSvc.putComment(this.newCommento, id).subscribe((res) => {
       // this.comment = res;
       console.log("modifica", res);
+      this.privateSvc.getComment(this.newCommento.elementId).subscribe((res) => {
+        this.comment = res;
+      });
+      // window.location.reload();
     });
-    // this.privateSvc.getComment(this.newCommento.elementId).subscribe((res) => {
-    //   this.comment = res;
-    // });
   }
 
   deleteCommenti(id: any) {
     this.privateSvc.deleteComment(id).subscribe((res) => {
       // this.comment = res;
       console.log("elimina", res);
-    });
-    this.privateSvc.getComment(this.newCommento.elementId).subscribe((res) => {
-      this.comment = res;
+      this.privateSvc.getComment(this.newCommento.elementId).subscribe((res) => {
+        this.comment = res;
+      });
     });
   }
+
+  // ngOnInit(){
+  //   this.privateSvc.get().subscribe((res) => {
+  //     this.profile = res;
+  //   });
+  // }
+
 }

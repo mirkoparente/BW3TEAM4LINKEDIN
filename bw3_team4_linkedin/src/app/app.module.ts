@@ -18,6 +18,7 @@ import { NewPostComponent } from "./components/new-post/new-post.component";
 import { SideHomeComponent } from "./components/side-home/side-home.component";
 import { CommentiComponent } from "./components/commenti/commenti.component";
 import { CommentiPostComponent } from './components/commenti-post/commenti-post.component';
+import { SidenewComponent } from './component/sidenew/sidenew.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { CommentiPostComponent } from './components/commenti-post/commenti-post.
     NewPostComponent,
     SideHomeComponent,
     CommentiPostComponent,
+    SidenewComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
