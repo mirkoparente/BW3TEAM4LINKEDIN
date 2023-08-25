@@ -12,6 +12,7 @@ import { CommentiComponent } from '../commenti/commenti.component';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
+  
   post!: Post[];
 
   toggle: boolean = false;
