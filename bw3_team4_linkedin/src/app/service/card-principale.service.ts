@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
-import { Commento, Comments, Post, Profilo } from "../profilo";
-import { Exp } from "../profilo";
-import { addExp } from "../profilo";
+import { Commento, Comments, Post, Profilo } from "../interface/profilo";
+import { Exp } from "../interface/profilo";
+import { addExp } from "../interface/profilo";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { environment } from "src/environments/environment.development";
