@@ -113,7 +113,7 @@ export class CardPrincipaleService {
 
   //CHIAMATE COMMENTI
   getComment(id: string): Observable<Comments[]> {
-    return this.http.get<Comments[]>(this.urlCommenti + ":" + id, {
+    return this.http.get<Comments[]>(this.urlCommenti + id, {
       headers: {
         Authorization: `Bearer ${"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGU3MmEzMmFkMjQ5NzAwMTQ2OTM2OTUiLCJpYXQiOjE2OTI4NzEyMTksImV4cCI6MTY5NDA4MDgxOX0.jZp_Lo_t3nFLECVAtZU1RiJDq8mQlNIt2MCDEfPxsT8"}`,
       },

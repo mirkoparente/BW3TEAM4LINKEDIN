@@ -12,7 +12,9 @@ export class CommentiComponent {
   @Input() id!: string;
   newToggle: boolean = false;
   comment!: Comments[];
+
   posts!: Post[];
+
   newCommento: Comments = {
     comment: "",
     rate: "1",
@@ -37,9 +39,12 @@ export class CommentiComponent {
 
   getCommenti(id: any) {
     this.newCommento.elementId = id;
+    console.log(id);
     this.privateSvc.getComment(this.newCommento.elementId).subscribe((res) => {
-      // this.post=res
+      this.comment = res;
+
       console.log("Res", res);
+      console.log("comment", this.comment);
     });
   }
 }

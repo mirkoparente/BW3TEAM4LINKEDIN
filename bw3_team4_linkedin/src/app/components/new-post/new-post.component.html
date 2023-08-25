@@ -1,7 +1,11 @@
 <div class="main-cont">
   <div class="div-post">
     <a class="ms-3">
-      <img class="img-profilo" src="{{ mineProfile?.image || '' }}" alt=""
+      <img
+        class="img-profilo"
+        *ngIf="mineProfile"
+        src="{{ mineProfile.image || '' }}"
+        alt=""
     /></a>
     <button data-bs-toggle="modal" data-bs-target="#postModal">
       <span>Avvia un post</span>
@@ -30,8 +34,11 @@
     <div class="modal-content">
       <div class="modal-header">
         <button data-bs-toggle="modal" data-bs-target="#modalSetting">
-          <img src="{{ mineProfile?.image || '' }}" class="img-profilo" />{{
-          mineProfile.username }}
+          <img
+            *ngIf="mineProfile"
+            src="{{ mineProfile.image || '' }}"
+            class="img-profilo"
+          />{{ mineProfile.username }}
           <i class="bi bi-caret-down-fill"></i>
         </button>
         <button
