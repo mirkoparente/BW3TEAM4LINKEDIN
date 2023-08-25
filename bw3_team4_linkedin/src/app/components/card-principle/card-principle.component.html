@@ -56,7 +56,7 @@
             [src]="profileDataId.image"
             class="card-img-top rounded-pill mt-2 ms-2 position-absolute top-50"
             alt="..."
-            style="width: 130px"
+            style="width: 130px;"
           />
         </div>
         <div class="px-3 mt-5">
@@ -525,43 +525,6 @@
                     <i class="bi bi-download"></i> Salva come pdf</a
                   >
                 </button>
-
-                <div
-                  class="modal fade"
-                  id="examplModal"
-                  tabindex="-1"
-                  aria-labelledby="examplModalLabel"
-                  aria-hidden="true"
-                >
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="examplModalLabel">
-                          Modal title
-                        </h1>
-                        <button
-                          type="button"
-                          class="btn-close"
-                          data-bs-dismiss="modal"
-                          aria-label="Close"
-                        ></button>
-                      </div>
-                      <div class="modal-body">Salvato con successo</div>
-                      <div class="modal-footer">
-                        <button
-                          type="button"
-                          class="btn btn-secondary"
-                          data-bs-dismiss="modal"
-                        >
-                          Close
-                        </button>
-                        <button type="button" class="btn btn-primary">
-                          Save changes
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
               </li>
               <li>
                 <!-- MODAL INFORMAZIONI SU QUESTO PROFILO-->
@@ -576,42 +539,6 @@
                     questo profilo</a
                   >
                 </button>
-
-                <div
-                  class="modal fade"
-                  id="eseModal"
-                  tabindex="-1"
-                  aria-labelledby="eseModalLabel"
-                  aria-hidden="true"
-                >
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="eseModalLabel">
-                          Informazioni su questo profilo
-                        </h1>
-                        <button
-                          type="button"
-                          class="btn-close"
-                          data-bs-dismiss="modal"
-                          aria-label="Close"
-                        ></button>
-                      </div>
-                      <div class="modal-body">
-                        <p><span class="fw-bold">Utende da</span>: 2020</p>
-                        <p>
-                          <span class="fw-bold">Informazioni di contatto</span>:
-                          aggiornate 3 mesi fa
-                        </p>
-                        <p>
-                          <span class="fw-bold">Foto del profilo</span>:
-                          aggiornate più di un anno fa
-                        </p>
-                      </div>
-                      <div class="modal-footer"></div>
-                    </div>
-                  </div>
-                </div>
               </li>
             </ul>
           </div>
@@ -671,6 +598,67 @@
           </button>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+<div
+  class="modal fade"
+  id="examplModal"
+  tabindex="-1"
+  aria-labelledby="examplModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="examplModalLabel">
+          Salva
+        </h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">Salvato con successo</div>
+      <div class="modal-footer"></div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="modal fade"
+  id="eseModal"
+  tabindex="-1"
+  aria-labelledby="eseModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="eseModalLabel">
+          Informazioni su questo profilo
+        </h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <p><span class="fw-bold">Utende da</span>: 2020</p>
+        <p>
+          <span class="fw-bold">Informazioni di contatto</span>: aggiornate 3
+          mesi fa
+        </p>
+        <p>
+          <span class="fw-bold">Foto del profilo</span>: aggiornate più di un
+          anno fa
+        </p>
+      </div>
+      <div class="modal-footer"></div>
     </div>
   </div>
 </div>

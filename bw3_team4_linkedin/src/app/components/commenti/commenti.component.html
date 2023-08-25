@@ -4,6 +4,7 @@
     <input
     class="form-control h-50 rounded-5 w-100"
       type="text"
+      class="rounded-5 me-2"
       [(ngModel)]="newCommento.comment"
       placeholder="Aggiungi un commento..."
     />
@@ -25,7 +26,10 @@
   class="d-flex justify-content-between rounded-4 border"
   *ngFor="let item of comment"
 >
-  <p class="m-2">{{item.comment}}</p>
+  <div>
+    <!-- <p>{{newItem.username}}</p> -->
+    <p class="m-2">{{item.comment}}</p>
+  </div>
   <!-- dropdown elimina/modifica -->
   <div class="dropdown">
     <a
@@ -62,7 +66,23 @@
       </button>
     </a>
     <ul class="dropdown-menu">
-      <li><a class="dropdown-item" href="#">Modifica</a></li>
+      <li>
+        <!-- <a class="dropdown-item" href="#"
+          ></a
+        > -->
+        <!-- Button trigger modal -->
+        <a
+          type="button"
+          class="btn"
+          id="commenti"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+        >
+          Modifica
+        </a>
+
+        <!-- Modal -->
+      </li>
       <li>
         <a class="dropdown-item" href="#" (click)="deleteCommenti(item._id)"
           >Elimina</a
@@ -72,6 +92,46 @@
       <!-- </li> -->
     </ul>
   </div>
+  <div
+    class="modal fade"
+    id="exampleModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">
+            Modal title
+          </h1>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <input
+            type="text"
+            class="rounded-5 me-2"
+            [(ngModel)]="newCommento.comment"
+            placeholder="Aggiungi un commento..."
+          />
+          <button
+            type="button"
+            class="btn btn-primary rounded-5"
+            (click)="putCommenti(item._id)"
+          >
+            modifica
+          </button>
+        </div>
+        <div class="modal-footer"></div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- *ngIf=" newToggle" -->
+<!--  -->
