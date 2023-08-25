@@ -45,4 +45,10 @@ export interface Comments {
   comment: string;
   rate: string;
   elementId: string;
+  _id: any;
+}
+export interface Commento {
+  comment: string;
+  rate: string;
+  elementId: string;
 }

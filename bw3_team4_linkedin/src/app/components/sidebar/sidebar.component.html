@@ -77,11 +77,14 @@
       <!-- ------- Profili presi random  A---------->
       <div *ngFor="let profile of sideProfileA; index as i">
         <div class="d-flex justify-content-start gap-4">
-          <img
-            class="w-25 h-25 img-thumbnail rounded-circle"
-            src="{{ profile.image }}"
-            alt=""
-          />
+          <div class="ratio ratio-1x1 rounded-circle overflow-hidden w-25 h-25" style="max-width: 40px;">
+
+            <img
+
+              src="{{ profile.image }}"
+              alt=""
+            />
+          </div>
 
           <div>
             <h5>
@@ -123,11 +126,14 @@
       <div *ngIf="profileB == true">
         <div *ngFor="let profile of sideProfileB; index as i">
           <div class="d-flex justify-content-start gap-4">
-            <img
-              class="w-25 h-25 img-thumbnail rounded-circle"
-              src="{{ profile.image }}"
-              alt=""
-            />
+            <div class="ratio ratio-1x1 rounded-circle overflow-hidden w-25 h-25" style="max-width: 40px;">
+
+              <img
+
+                src="{{ profile.image }}"
+                alt=""
+              />
+            </div>
 
             <div>
               <h5>
@@ -220,11 +226,14 @@
       <!-- 1 -->
       <div>
         <div class="d-flex justify-content-start gap-4">
-          <img
-            class="w-25 h-25"
-            src="https://scontent-fra5-1.xx.fbcdn.net/v/t39.30808-6/275655629_385209730081008_6039091939439476533_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=GT690pBFbF8AX-eLjSq&_nc_ht=scontent-fra5-1.xx&oh=00_AfD4IB3s5CwQZVActup47Ae5lf71hNw14MSM63UVsO8_3A&oe=64E90A11"
-            alt="profile-image"
-          />
+          <div class="ratio ratio-1x1  overflow-hidden w-25 h-25" style="max-width: 40px;">
+
+            <img
+
+              src="https://scontent-fra5-1.xx.fbcdn.net/v/t39.30808-6/275655629_385209730081008_6039091939439476533_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=GT690pBFbF8AX-eLjSq&_nc_ht=scontent-fra5-1.xx&oh=00_AfD4IB3s5CwQZVActup47Ae5lf71hNw14MSM63UVsO8_3A&oe=64E90A11"
+              alt="profile-image"
+            />
+          </div>
 
           <div>
             <h5>
@@ -271,11 +280,14 @@
       <!-- 2 -->
       <div>
         <div class="d-flex justify-content-start gap-4">
-          <img
-            class="w-25 h-25"
-            src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png"
-            alt="profile-image"
-          />
+          <div class="ratio ratio-1x1  overflow-hidden w-25 h-25" style="max-width: 40px;">
+
+            <img
+
+              src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png"
+              alt="profile-image"
+            />
+          </div>
 
           <div>
             <h5>
@@ -290,7 +302,7 @@
               <a
                 href="#"
                 class="text-black link-underline link-underline-opacity-0"
-                >programming</a
+                >Programming</a
               >
             </p>
           </div>

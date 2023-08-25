@@ -31,6 +31,9 @@ export class NewPostComponent implements OnInit {
     console.log((<HTMLInputElement>event.target).value);
   }
   addPost(post: Partial<Post>){
-    this.profileService.addPost(this.newPost).subscribe()
+    this.profileService.addPost(this.newPost).subscribe((res)=>{
+      window.location.reload()
+
+    })
   }
 }

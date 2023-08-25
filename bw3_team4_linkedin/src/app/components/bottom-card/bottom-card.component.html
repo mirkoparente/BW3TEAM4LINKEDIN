@@ -75,8 +75,7 @@
                   >
                     <path
                       d="M12 16v6H3v-6a3 3 0 013-3h3a3 3 0 013 3zm5.5-3A3.5 3.5 0 1014 9.5a3.5 3.5 0 003.5 3.5zm1 2h-2a2.5 2.5 0 00-2.5 2.5V22h7v-4.5a2.5 2.5 0 00-2.5-2.5zM7.5 2A4.5 4.5 0 1012 6.5 4.49 4.49 0 007.5 2z"
-                    ></path></svg
-                ></i>
+                    ></path></svg></i>
               </div>
               <div class="d-flex flex-column">
                 <a href="#" class="text-decoration-none text-black"
@@ -223,11 +222,11 @@
           </a>
         </div>
         <div class="mt-4">
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum
-            eaque cumque saepe officia accusantium, quia expedita repellendus
-            facilis similique voluptas quasi impedit sapiente autem atque
-            corrupti culpa aspernatur iusto ut.
+          <p *ngIf="id == null">
+            {{profile.bio}}
+          </p>
+          <p *ngIf="!(id == null) ">
+            {{profileDataId.bio}}
           </p>
         </div>
       </div>
@@ -284,7 +283,7 @@
     </div>
   </div>
   <!-- esperienza -->
-  <app-modale></app-modale>
+  <app-modale [profileDataId]="profileDataId"></app-modale>
   <!-- formazione -->
   <div class="container mb-1">
     <div class="row">
