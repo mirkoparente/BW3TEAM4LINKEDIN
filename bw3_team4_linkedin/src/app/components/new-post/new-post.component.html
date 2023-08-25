@@ -1,7 +1,11 @@
 <div class="main-cont">
   <div class="div-post">
     <a class="ms-3">
-      <img class="img-profilo" src="{{ mineProfile?.image || '' }}" alt=""
+      <img
+        class="img-profilo"
+        *ngIf="mineProfile"
+        src="{{ mineProfile.image || '' }}"
+        alt=""
     /></a>
     <button data-bs-toggle="modal" data-bs-target="#postModal">
       <span>Avvia un post</span>
@@ -30,9 +34,11 @@
     <div class="modal-content">
       <div class="modal-header">
         <button data-bs-toggle="modal" data-bs-target="#modalSetting">
-          <img src="{{ mineProfile?.image || '' }}" class="img-profilo" />{{
-            mineProfile.username
-          }}
+          <img
+            *ngIf="mineProfile"
+            src="{{ mineProfile.image || '' }}"
+            class="img-profilo"
+          />{{ mineProfile.username }}
           <i class="bi bi-caret-down-fill"></i>
         </button>
         <button
@@ -74,7 +80,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Modal title</h5>
+        <h5 class="modal-title">Impostazioni del post</h5>
         <button
           type="button"
           class="btn-close"
@@ -83,7 +89,9 @@
         ></button>
       </div>
       <div class="modal-body">
-        <p>Modal body text goes here.</p>
+        <h6>Chi può vedere il tuo post?</h6>
+        <span>Chiunque</span> <input type="radio" /> <br />
+        <span>Solo collegamenti</span> <input type="radio" />
       </div>
       <div class="modal-footer">
         <button

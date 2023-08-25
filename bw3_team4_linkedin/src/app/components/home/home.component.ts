@@ -4,6 +4,7 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Post } from 'src/app/profilo';
 import { CardPrincipaleService } from 'src/app/service/card-principale.service';
+import { CommentiComponent } from "../commenti/commenti.component";
 
 @Component({
   selector: 'app-home',
@@ -12,15 +13,18 @@ import { CardPrincipaleService } from 'src/app/service/card-principale.service';
 })
 export class HomeComponent {
   post!: Post[];
+
   toggle: boolean = false;
+  newToggle: boolean = false;
   profileData!: Profilo;
   isPostAdmin: boolean[] = [];
   textPostMod: string = '';
 
   commenti: Comments = {
-    comment: '',
-    rate: '1',
-    elementId: '',
+    comment: "",
+    rate: "1",
+    elementId: "",
+    _id: "",
   };
 
   constructor(
@@ -37,6 +41,9 @@ export class HomeComponent {
       this.post = data.reverse().slice(0, 10);
 
       this.ceckPostUser();
+      this.post.forEach((post) => {
+        post.createdAt= new Date(post.createdAt).toLocaleTimeString("it");
+      })
     });
   }
 

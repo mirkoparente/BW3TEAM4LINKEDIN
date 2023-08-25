@@ -132,6 +132,8 @@
               required
               name="role"
               [(ngModel)]="formData.role"
+              value="{{ formData.role}}"
+
             />
           </div>
           <div class="mb-3">
@@ -677,7 +679,7 @@
             (click)="saveExp()"
             class="btn btn-primary float-end"
             data-bs-dismiss="modal"
-            
+
           >
             Salva
           </button>
