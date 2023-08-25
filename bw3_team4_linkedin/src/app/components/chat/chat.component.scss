@@ -27,7 +27,25 @@
       }
     }
   }
+
 }
+
+#input {
+  border-radius: 10px;
+  span {
+    background-color: white;
+    background-color: rgb(222, 222, 222);
+  }
+  input {
+    background-color: rgb(222, 222, 222);
+    border: none;
+    border-radius: initial;
+    input:focus {
+      outline: none;
+    }
+  }
+}
+
 
 .switch {
   display: flex;
@@ -38,6 +56,10 @@
     text-decoration: none;
     color: inherit;
   }
+}
+
+.form-control:focus {
+  outline: none;
 }
 
 .input-group {
