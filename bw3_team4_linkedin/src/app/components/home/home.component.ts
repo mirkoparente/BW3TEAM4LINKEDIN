@@ -1,5 +1,7 @@
 import { Comments, Profilo } from './../../profilo';
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Post } from 'src/app/profilo';
 import { CardPrincipaleService } from 'src/app/service/card-principale.service';
 
@@ -13,6 +15,7 @@ export class HomeComponent {
   toggle: boolean = false;
   profileData!: Profilo;
   isPostAdmin: boolean[] = [];
+  textPostMod: string = '';
 
   commenti: Comments = {
     comment: '',
@@ -20,7 +23,10 @@ export class HomeComponent {
     elementId: '',
   };
 
-  constructor(private privateSvc: CardPrincipaleService) {}
+  constructor(
+    private privateSvc: CardPrincipaleService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
     //prendi dati profilo
@@ -59,6 +65,26 @@ export class HomeComponent {
       } else {
         this.isPostAdmin.push(false);
       }
+    });
+  }
+
+  //cancello il post
+  deletePost(idPost: string) {
+    this.privateSvc.deletePostId(idPost).subscribe((res) => {
+      this.post = this.post.filter((e) => e._id !== idPost);
+    });
+  }
+
+  //apro modale modifica
+  openModifyModal(textPost: string) {
+    this.textPostMod = textPost;
+    console.log(this.textPostMod);
+  }
+
+  //modifico il post
+  modifyPost(form: NgForm, idPost: string) {
+    this.privateSvc.modifyPost(idPost, form.value).subscribe((res) => {
+      window.location.reload();
     });
   }
 }
