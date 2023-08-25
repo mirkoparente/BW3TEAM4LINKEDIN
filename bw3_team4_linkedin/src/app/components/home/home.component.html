@@ -60,7 +60,7 @@
           </button>
 
           <!-- Droopdown per post non dell' utente -->
-          <ul class="dropdown-menu" *ngIf="isPostAdmin == false">
+          <ul class="dropdown-menu" *ngIf="isPostAdmin[i] == false">
             <li class="d-flex align-items-center">
               <a class="dropdown-item fs-5" href="#"
                 ><i class="bi bi-box-arrow-down me-2"></i>Salva</a
@@ -95,7 +95,7 @@
           </ul>
 
           <!-- dropdown per post dell' utente -->
-          <ul class="dropdown-menu" *ngIf="isPostAdmin == true">
+          <ul class="dropdown-menu" *ngIf="isPostAdmin[i] == true">
             <li class="d-flex align-items-center">
               <a class="dropdown-item fs-5" href="#"
                 ><i class="bi bi-star me-2"></i>Metti in primo piano nella parte
