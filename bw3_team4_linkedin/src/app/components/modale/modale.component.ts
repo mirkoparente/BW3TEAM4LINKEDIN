@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Exp, Profilo, addExp } from 'src/app/profilo';
 import { CardPrincipaleService } from 'src/app/service/card-principale.service';
 
@@ -17,6 +17,7 @@ export class ModaleComponent {
     description: '',
     area: '',
   };
+ @Input() profileDataId!:Profilo
 
 
   constructor(private privateSvc: CardPrincipaleService) {}

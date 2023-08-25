@@ -13,6 +13,7 @@ export class CardPrincipleComponent {
   id!: string;
   profileDataId!: Profilo;
 
+
   constructor(
     private router: ActivatedRoute,
     private routing: Router,
@@ -22,7 +23,6 @@ export class CardPrincipleComponent {
   ngOnInit() {
     this.privateSvc.get().subscribe((res) => {
       this.profile = res;
-      console.log(res);
     });
 
     //prendo l'id parametro
