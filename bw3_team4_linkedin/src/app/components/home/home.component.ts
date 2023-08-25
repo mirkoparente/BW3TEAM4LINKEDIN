@@ -26,6 +26,9 @@ export class HomeComponent {
     this.privateSvc.getPost().subscribe((data) => {
       this.post = data.reverse().slice(0, 10);
       console.log(this.post);
+      this.post.forEach((post) => {
+        post.createdAt= new Date(post.createdAt).toLocaleTimeString("it");
+      })
     });
   }
 
