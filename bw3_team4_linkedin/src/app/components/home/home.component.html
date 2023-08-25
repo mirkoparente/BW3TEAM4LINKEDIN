@@ -14,15 +14,27 @@
 
     <!-- ----Post---- -->
     <div
-      class="px-3 col-12 bg-white text-black rounded-4 py-5 fs-6 mt-2"
+      class="px-3 col-12 bg-white text-black rounded-4 py-2 fs-6 mt-2"
       *ngFor="let item of post; index as i"
     >
       <!-- <img src="{{item.image}}" alt="image" class="w-50" *ngIf="item.image"> -->
-      <div class="d-flex justify-content-between align-items-center">
-        <h5>
-          {{ item.username }}
-        </h5>
-
+      <div class="d-flex justify-content-between">
+        <div class="d-flex align-self-center">
+          <img class=" rounded-circle me-3" src="{{item.user.image}}" alt="">
+          <div>
+          <h5 class="m-0 p-0">
+            {{ item.user.name }} {{item.user.surname}}
+          </h5>
+          <div>
+            <p class="fs-6 text-secondary mb-0">{{item.user.title}}</p>
+          </div>
+          <div class="mt-0 pt-0">
+            <p class="text-secondary fs-6">{{item.createdAt}} <i aria-hidden="true" type="globe-americas" class="v-align-bottom" size="small"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" data-supported-dps="16x16" fill="currentColor" class="mercado-match" width="16" height="16" focusable="false">
+              <path d="M8 1a7 7 0 107 7 7 7 0 00-7-7zM3 8a5 5 0 011-3l.55.55A1.5 1.5 0 015 6.62v1.07a.75.75 0 00.22.53l.56.56a.75.75 0 00.53.22H7v.69a.75.75 0 00.22.53l.56.56a.75.75 0 01.22.53V13a5 5 0 01-5-5zm6.24 4.83l2-2.46a.75.75 0 00.09-.8l-.58-1.16A.76.76 0 0010 8H7v-.19a.51.51 0 01.28-.45l.38-.19a.74.74 0 01.68 0L9 7.5l.38-.7a1 1 0 00.12-.48v-.85a.78.78 0 01.21-.53l1.07-1.09a5 5 0 01-1.54 9z"></path>
+            </svg></i></p>
+          </div>
+        </div>
+        </div>
         <!-- Dropdown per post non dell' utente -->
         <div class="dropdown" (click)="ceckPostUser(item.user._id)">
           <button
@@ -153,6 +165,7 @@
           </ul>
         </div>
       </div>
+
       <p>{{ item.text }}</p>
       <div class="d-flex justify-content-between align-items-center">
         <div>
@@ -201,9 +214,9 @@
       </div>
       <app-commenti *ngIf="toggle" [id]="item._id"></app-commenti>
     </div>
+    <app-commenti-post
+      *ngFor="let singlepost of post"
+      [post]="singlepost"
+    ></app-commenti-post>
   </div>
 </div>
-
-<!-- -->
-
-<p>{{commenti.comment}}</p>

@@ -2,6 +2,7 @@ import { Comments, Profilo } from "./../../profilo";
 import { Component } from "@angular/core";
 import { Post } from "src/app/profilo";
 import { CardPrincipaleService } from "src/app/service/card-principale.service";
+import { CommentiComponent } from "../commenti/commenti.component";
 
 @Component({
   selector: "app-home",
@@ -10,7 +11,9 @@ import { CardPrincipaleService } from "src/app/service/card-principale.service";
 })
 export class HomeComponent {
   post!: Post[];
+
   toggle: boolean = false;
+  newToggle: boolean = false;
   profileData!: Profilo;
   isPostAdmin: boolean = false;
 
@@ -18,6 +21,7 @@ export class HomeComponent {
     comment: "",
     rate: "1",
     elementId: "",
+    _id: "",
   };
 
   constructor(private privateSvc: CardPrincipaleService) {}
@@ -26,6 +30,9 @@ export class HomeComponent {
     this.privateSvc.getPost().subscribe((data) => {
       this.post = data.reverse().slice(0, 10);
       console.log(this.post);
+      this.post.forEach((post) => {
+        post.createdAt= new Date(post.createdAt).toLocaleTimeString("it");
+      })
     });
   }
 

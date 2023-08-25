@@ -1,14 +1,72 @@
-<div class="col-12">
-  <input
-    type="text"
-    [(ngModel)]="newCommento.comment"
-    placeholder="Aggiungi un commento..."
-  />
-  <button
-    type="button"
-    class="btn btn-primary rounded-5"
-    (click)="postComment(id)"
-  >
-    Pubblica
-  </button>
+<div class="d-flex flex-column flex-md-row justify-content-between">
+  <div>
+    <input
+      type="text"
+      [(ngModel)]="newCommento.comment"
+      placeholder="Aggiungi un commento..."
+    />
+    <button
+      type="button"
+      class="btn btn-primary rounded-5"
+      (click)="postComment(id)"
+    >
+      Pubblica
+    </button>
+  </div>
+  <a (click)="getCommenti(id)">Vedi commenti</a>
 </div>
+
+<div
+  id="commenti"
+  class="d-flex justify-content-between rounded-4 border"
+  *ngFor="let item of comment"
+>
+  <p class="m-2">{{item.comment}}</p>
+  <!-- dropdown elimina/modifica -->
+  <div class="dropdown">
+    <a
+      id="commenti"
+      class="btn dropdown-toggle"
+      type="button"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+    >
+      <button
+        id="commenti"
+        _ngcontent-ng-c1052230211=""
+        type="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+        class="btn btn-light text-decoration-none text-secondary"
+      >
+        <svg
+          _ngcontent-ng-c1052230211=""
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          data-supported-dps="24x24"
+          fill="currentColor"
+          width="24"
+          height="24"
+          focusable="false"
+          class="mercado-match"
+        >
+          <path
+            _ngcontent-ng-c1052230211=""
+            d="M14 12a2 2 0 11-2-2 2 2 0 012 2zM4 10a2 2 0 102 2 2 2 0 00-2-2zm16 0a2 2 0 102 2 2 2 0 00-2-2z"
+          ></path>
+        </svg>
+      </button>
+    </a>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="#">Modifica</a></li>
+      <li>
+        <a class="dropdown-item" href="#" (click)="deleteCommenti(item._id)"
+          >Elimina</a
+        >
+      </li>
+      <!-- <li><a class="dropdown-item" href="#">Something else here</a></li> -->
+      <!-- </li> -->
+    </ul>
+  </div>
+</div>
+<!-- *ngIf=" newToggle" -->
