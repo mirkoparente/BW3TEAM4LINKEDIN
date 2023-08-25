@@ -61,7 +61,7 @@
             </div>
           </div>
           <!-- Dropdown per post non dell' utente -->
-          <div class="dropdown" (click)="ceckPostUser(item.user._id)">
+          <div class="dropdown">
             <button
               class="btn btn-light text-decoration-none text-secondary"
               type="button"
@@ -85,8 +85,8 @@
               </svg>
             </button>
 
-            <!-- Droopdown per post non dell' utente -->
-            <ul class="dropdown-menu" *ngIf="isPostAdmin == false">
+            <!-- --------------Droopdown per post non dell' utente----------- -->
+            <ul class="dropdown-menu" *ngIf="isPostAdmin[i] == false">
               <li class="d-flex align-items-center">
                 <a class="dropdown-item fs-5" href="#"
                   ><i class="bi bi-box-arrow-down me-2"></i>Salva</a
@@ -120,8 +120,8 @@
               </li>
             </ul>
 
-            <!-- dropdown per post dell' utente -->
-            <ul class="dropdown-menu" *ngIf="isPostAdmin == true">
+            <!-- --------------dropdown per post dell' utente----------------- -->
+            <ul class="dropdown-menu" *ngIf="isPostAdmin[i] == true">
               <li class="d-flex align-items-center">
                 <a class="dropdown-item fs-5" href="#"
                   ><i class="bi bi-star me-2"></i>Metti in primo piano nella
@@ -148,15 +148,23 @@
               </li>
 
               <li class="d-flex align-items-center">
-                <a class="dropdown-item fs-5" href="#"
-                  ><i class="bi bi-pen me-2"></i>Modifica post</a
+                <button
+                  class="dropdown-item fs-5"
+                  (click)="openModifyModal(item.text)"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal"
                 >
+                  <i class="bi bi-pen me-2"></i>Modifica post
+                </button>
               </li>
 
               <li class="d-flex align-items-center">
-                <a class="dropdown-item fs-5" href="#"
-                  ><i class="bi bi-trash3 me-2"></i>Elimina post</a
+                <button
+                  class="dropdown-item fs-5"
+                  (click)="deletePost(item._id)"
                 >
+                  <i class="bi bi-trash3 me-2"></i>Elimina post
+                </button>
               </li>
 
               <li class="d-flex align-items-center">
@@ -191,7 +199,60 @@
           </div>
         </div>
 
-        <p>{{ item.text }}</p>
+        <!-- -------------Modale modifca post---------------- -->
+        <div
+          class="modal fade"
+          id="exampleModal"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <!-- form modifca post -->
+          <form
+            #modifyform="ngForm"
+            (ngSubmit)="modifyPost(modifyform, item._id)"
+          >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">
+                    {{ item.user.username }}
+                  </h1>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+
+                <div class="modal-body">
+                  <input
+                    type="textarea"
+                    name="text"
+                    ngModel
+                    required
+                    value="{{ textPostMod }}"
+                  />
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Chiudi
+                  </button>
+                  <button type="submit" class="btn btn-primary">
+                    Modifica post
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <p class="p-2">{{ item.text }}</p>
         <div class="d-flex justify-content-between align-items-center">
           <div>
             <a
