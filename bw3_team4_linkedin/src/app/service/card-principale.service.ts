@@ -92,9 +92,10 @@ export class CardPrincipaleService {
     });
   }
   //elimina esperienza
-  deleteExp(expId: string): Observable<Exp> {
+  deleteExp(expId: string){
     const urlUpdate = `https://striveschool-api.herokuapp.com/api/profile/${this.userId}/experiences/${expId}`;
-    return this.http.delete<Exp>(urlUpdate, {
+    return this.http.delete(urlUpdate, {
+      responseType: "text",
       headers: {
         Authorization: `Bearer ${this.appId}`,
       },

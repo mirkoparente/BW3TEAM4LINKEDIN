@@ -51,8 +51,9 @@ export class ModificaExpComponent {
 
   getIdExp(i: number) {
     this.privateSvc.getIdExp(this.exp[i]._id).subscribe((res) => {
-      console.log(this.expId);
       this.expId = res;
+      console.log("expid",this.expId);
+      this.formData=this.expId
     });
   }
 
