@@ -2,6 +2,7 @@
   <div>
     <input
       type="text"
+      class="rounded-5 me-2"
       [(ngModel)]="newCommento.comment"
       placeholder="Aggiungi un commento..."
     />
@@ -21,7 +22,10 @@
   class="d-flex justify-content-between rounded-4 border"
   *ngFor="let item of comment"
 >
-  <p class="m-2">{{item.comment}}</p>
+  <div>
+    <!-- <p>{{item}}</p> -->
+    <p class="m-2">{{item.comment}}</p>
+  </div>
   <!-- dropdown elimina/modifica -->
   <div class="dropdown">
     <a
