@@ -92,9 +92,10 @@ export class CardPrincipaleService {
     });
   }
   //elimina esperienza
-  deleteExp(expId: string): Observable<Exp> {
+  deleteExp(expId: string) {
     const urlUpdate = `https://striveschool-api.herokuapp.com/api/profile/${this.userId}/experiences/${expId}`;
-    return this.http.delete<Exp>(urlUpdate, {
+    return this.http.delete(urlUpdate, {
+      responseType: "text",
       headers: {
         Authorization: `Bearer ${this.appId}`,
       },
@@ -128,8 +129,8 @@ export class CardPrincipaleService {
     });
   }
 
-  putComment(body: Commento, id: string): Observable<Comments> {
-    return this.http.put<Comments>(this.urlCommenti + id, body, {
+  putComment(id: string, body: any): Observable<Comments> {
+    return this.http.post<Comments>(this.urlCommenti + id, body, {
       headers: {
         Authorization: `Bearer ${"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGU3MmEzMmFkMjQ5NzAwMTQ2OTM2OTUiLCJpYXQiOjE2OTI4NzEyMTksImV4cCI6MTY5NDA4MDgxOX0.jZp_Lo_t3nFLECVAtZU1RiJDq8mQlNIt2MCDEfPxsT8"}`,
         "Content-Type": "application/json",
@@ -141,6 +142,27 @@ export class CardPrincipaleService {
     return this.http.delete<Comments>(this.urlCommenti + id, {
       headers: {
         Authorization: `Bearer ${"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGU3MmEzMmFkMjQ5NzAwMTQ2OTM2OTUiLCJpYXQiOjE2OTI4NzEyMTksImV4cCI6MTY5NDA4MDgxOX0.jZp_Lo_t3nFLECVAtZU1RiJDq8mQlNIt2MCDEfPxsT8"}`,
+        "Content-Type": "application/json",
+      },
+    });
+  }
+
+  //cancellare post
+  deletePostId(idPost: string) {
+    return this.http.delete(this.urlPost + idPost, {
+      responseType: "text",
+      headers: { Authorization: `Bearer ${this.appId}` },
+    });
+  }
+
+  //modifica post
+  modifyPost(postId: string, text: string) {
+    const urlUpdate = `https://striveschool-api.herokuapp.com/api/posts/${postId}`;
+
+    return this.http.put(urlUpdate, text, {
+      headers: {
+        Authorization: `Bearer ${this.appId}`,
+        "Content-Type": "application/json",
       },
     });
   }

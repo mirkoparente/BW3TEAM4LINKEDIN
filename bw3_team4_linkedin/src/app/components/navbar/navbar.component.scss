@@ -32,6 +32,9 @@ nav{
   z-index: 100;
   box-shadow:  0 5px 10px rgba(0,0,0, 0.1);
 }
+.navbar-left a{
+  cursor: pointer;
+}
 .navbar-center ul li{
   display: inline-block;
   list-style: none;
@@ -48,8 +51,8 @@ nav{
 }
 
 .profile-logo{
-  width: 1.4em;
-  height: 1.4em;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   display: block;
   cursor: pointer;
@@ -124,6 +127,7 @@ p i {
   margin: 10px;
   border-radius: 10px 0px 10px 10px;
   box-shadow:  0 5px 10px rgba(0,0,0, 0.1);
+  width: 237px;
 }
 .user-info{
   display: flex;
@@ -135,13 +139,15 @@ p i {
   margin-right: 15px;
 }
 .button-p{
+  display: block;
+  text-align: center;
+  font-size: medium !important;
   background: transparent;
   border-color: #045be6;
   border-radius: 16px 16px 16px;
   border-style: solid;
-  padding-right: 20px;
-  padding-left: 20px;
-  color: #045be6;
+  padding: 1.5px;
+  color: #045be6 !important;
   margin: 10px;
   width: 100%;
 }
@@ -215,7 +221,7 @@ hr{
   .navbar-center i{
     font-size: 1.8em;
   }
-  .navbar-right p{
+  .dropdown span{
     display: none;
   }
 }
@@ -228,6 +234,9 @@ hr{
     display: none;
   }
   .navbar-center a p{
+    display: none;
+  }
+  .dropdown{
     display: none;
   }
   .search-box {
