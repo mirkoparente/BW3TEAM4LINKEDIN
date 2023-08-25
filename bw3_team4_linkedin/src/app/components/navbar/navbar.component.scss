@@ -127,6 +127,7 @@ p i {
   margin: 10px;
   border-radius: 10px 0px 10px 10px;
   box-shadow:  0 5px 10px rgba(0,0,0, 0.1);
+  width: 237px;
 }
 .user-info{
   display: flex;
@@ -220,7 +221,7 @@ hr{
   .navbar-center i{
     font-size: 1.8em;
   }
-  .navbar-right p{
+  .dropdown span{
     display: none;
   }
 }
@@ -235,7 +236,7 @@ hr{
   .navbar-center a p{
     display: none;
   }
-  .navbar-right{
+  .dropdown{
     display: none;
   }
   .search-box {
