@@ -11,7 +11,7 @@ export class CommentiPostComponent {
   @Input() post!: Post;
 
   @Input() id!: string;
-  
+
   toggle: boolean = false;
   newToggle: boolean = false;
   profileData!: Profilo;
