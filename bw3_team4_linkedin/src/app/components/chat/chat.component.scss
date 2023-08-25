@@ -4,23 +4,21 @@
   position: sticky;
   bottom: 0;
   height: 3em;
-}
+  .btn {
+    background-color: white;
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(0);
 
-.dropup {
-  width: 20em;
-  background-color: white;
-}
-
-.dropdown-menu {
-  width: 20em;
+    &.alzato {
+      transform: translateY(-601px);
+      border: none;
+      background-color: white;
+    }
+  }
 }
 
 p {
   text-decoration: none;
-}
-
-.btn {
-  background-color: rgb(233, 233, 233);
 }
 
 .icon {

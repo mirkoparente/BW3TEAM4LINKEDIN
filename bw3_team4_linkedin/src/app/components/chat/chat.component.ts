@@ -9,6 +9,7 @@ import { CardPrincipaleService } from 'src/app/service/card-principale.service';
 })
 export class ChatComponent {
   profile!: Profilo;
+
   constructor(private privateSvc: CardPrincipaleService) {}
 
   ngOnInit() {
@@ -16,5 +17,13 @@ export class ChatComponent {
       this.profile = res;
       console.log(res);
     });
+  }
+
+  isAlzato = false;
+  isMenuAperto = false;
+
+  toggleMenu() {
+    this.isAlzato = !this.isAlzato;
+    this.isMenuAperto = !this.isMenuAperto;
   }
 }
