@@ -53,14 +53,14 @@
       </li>
     </ul>
   </div>
-  <div class="navbar-right text-center" (click)="clickEvent($event)">
+  <!--  <div class="navbar-right text-center" (click)="clickEvent($event)">
     <img
       src="https://media.licdn.com/dms/image/D4E12AQEud3Ll5MI7cQ/article-inline_image-shrink_1000_1488/0/1660833954461?e=1698278400&v=beta&t=dCuSNgenSpCbwGlJViDUrU3grDKSN5dznu0xI-49X4g"
       alt=""
       class="profile-logo"
     />
     <p>Tu <i class="bi bi-caret-down-fill"></i></p>
-  </div>
+  </div>-->
   <!--dropdown profile-->
   <div class="profile-menu-wrap" [ngClass]="status ? 'open-menu' : ''">
     <div class="profile-menu">
@@ -86,6 +86,47 @@
       <a>Post e attività</a><br />
       <hr />
       <a>Esci</a>
+    </div>
+  </div>
+  <!--dropdown 2 test bootstrap-->
+  <div class="dropdown">
+    <button
+      class="btn dropdown-toggle"
+      type="button"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+    >
+      <img
+        src="https://media.licdn.com/dms/image/D4E12AQEud3Ll5MI7cQ/article-inline_image-shrink_1000_1488/0/1660833954461?e=1698278400&v=beta&t=dCuSNgenSpCbwGlJViDUrU3grDKSN5dznu0xI-49X4g"
+        alt=""
+        class="profile-logo"
+      />
+      <span>Tu</span>
+    </button>
+
+    <div class="profile-menu dropdown-menu">
+      <div class="user-info">
+        <img
+          src="https://media.licdn.com/dms/image/D4E12AQEud3Ll5MI7cQ/article-inline_image-shrink_1000_1488/0/1660833954461?e=1698278400&v=beta&t=dCuSNgenSpCbwGlJViDUrU3grDKSN5dznu0xI-49X4g"
+        />
+
+        <div>
+          <h3>{{ profilo.name }} {{ profilo.surname }}</h3>
+          <p>{{ profilo.title }}</p>
+        </div>
+      </div>
+      <a routerLink="/profilo" class="button-p">visualizzo profilo</a>
+      <hr />
+      <h6>Account</h6>
+      <a class="dropdown-item">Impostazioni</a>
+      <a class="dropdown-item">Guida</a>
+      <a class="dropdown-item">Lingua</a>
+      <hr />
+      <h6>Gestisci</h6>
+      <a class="dropdown-item">Post e attività</a>
+      <a class="dropdown-item">Post e attività</a>
+      <hr />
+      <a class="dropdown-item">Esci</a>
     </div>
   </div>
   <!--offcanvas-->
