@@ -2,6 +2,7 @@ import { Comments, Profilo } from "./../../profilo";
 import { Component } from "@angular/core";
 import { Post } from "src/app/profilo";
 import { CardPrincipaleService } from "src/app/service/card-principale.service";
+import { CommentiComponent } from "../commenti/commenti.component";
 
 @Component({
   selector: "app-home",
@@ -11,6 +12,7 @@ import { CardPrincipaleService } from "src/app/service/card-principale.service";
 export class HomeComponent {
   post!: Post[];
   toggle: boolean = false;
+  newToggle: boolean = false;
   profileData!: Profilo;
   isPostAdmin: boolean = false;
 

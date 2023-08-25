@@ -213,9 +213,9 @@
       </div>
       <app-commenti *ngIf="toggle" [id]="item._id"></app-commenti>
     </div>
+    <app-commenti-post
+      *ngFor="let singlepost of post"
+      [post]="singlepost"
+    ></app-commenti-post>
   </div>
 </div>
-
-<!-- -->
-
-<p>{{commenti.comment}}</p>

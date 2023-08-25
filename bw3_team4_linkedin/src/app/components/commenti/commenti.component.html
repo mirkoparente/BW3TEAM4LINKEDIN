@@ -1,14 +1,22 @@
-<div class="col-12">
-  <input
-    type="text"
-    [(ngModel)]="newCommento.comment"
-    placeholder="Aggiungi un commento..."
-  />
-  <button
-    type="button"
-    class="btn btn-primary rounded-5"
-    (click)="postComment(id)"
-  >
-    Pubblica
-  </button>
+<div class="d-flex flex-column flex-md-row justify-content-between">
+  <div>
+    <input
+      type="text"
+      [(ngModel)]="newCommento.comment"
+      placeholder="Aggiungi un commento..."
+    />
+    <button
+      type="button"
+      class="btn btn-primary rounded-5"
+      (click)="postComment(id)"
+    >
+      Pubblica
+    </button>
+  </div>
+  <a (click)="getCommenti(id)">Vedi commenti</a>
 </div>
+
+<div *ngFor="let item of comment">
+  <p>{{item.comment}}</p>
+</div>
+<!-- *ngIf=" newToggle" -->

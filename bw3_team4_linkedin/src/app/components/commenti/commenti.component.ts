@@ -1,5 +1,5 @@
 import { Component, Input } from "@angular/core";
-import { Comments } from "../../profilo";
+import { Comments, Post } from "../../profilo";
 import { CardPrincipaleService } from "../../service/card-principale.service";
 
 @Component({
@@ -10,6 +10,11 @@ import { CardPrincipaleService } from "../../service/card-principale.service";
 export class CommentiComponent {
   @Input() commento!: Comments;
   @Input() id!: string;
+  newToggle: boolean = false;
+  comment!: Comments[];
+
+  posts!: Post[];
+
   newCommento: Comments = {
     comment: "",
     rate: "1",
@@ -21,13 +26,25 @@ export class CommentiComponent {
   postComment(id: any) {
     this.newCommento.elementId = id;
     this.privateSvc.postComment(this.newCommento).subscribe((res) => {
-      // this.commenti = res;
+      this.comment = res;
       console.log("Res", res);
+      console.log(this.comment);
       // console.log(this.commenti.comment);
     });
     //   this.privateSvc.getPost().subscribe((data) => {
     //     this.post = data.reverse();
     //     console.log(this.post);
     //   });
+  }
+
+  getCommenti(id: any) {
+    this.newCommento.elementId = id;
+    console.log(id);
+    this.privateSvc.getComment(this.newCommento.elementId).subscribe((res) => {
+      this.comment = res;
+
+      console.log("Res", res);
+      console.log("comment", this.comment);
+    });
   }
 }
