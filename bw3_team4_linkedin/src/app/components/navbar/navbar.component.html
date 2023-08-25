@@ -1,6 +1,6 @@
 <nav>
   <div class="navbar-left">
-    <a
+    <a routerLink="/profilo"
       ><img
         class="logo"
         src="https://cdn4.iconfinder.com/data/icons/social-media-flat-7/64/Social-media_LinkedIn-512.png"
@@ -55,7 +55,7 @@
   </div>
   <div class="navbar-right text-center" (click)="clickEvent($event)">
     <img
-      src="https://www.dogheroes.it/wp-content/uploads/2022/09/border-collie-alimentazione-scaled.jpg"
+      src="https://media.licdn.com/dms/image/D4E12AQEud3Ll5MI7cQ/article-inline_image-shrink_1000_1488/0/1660833954461?e=1698278400&v=beta&t=dCuSNgenSpCbwGlJViDUrU3grDKSN5dznu0xI-49X4g"
       alt=""
       class="profile-logo"
     />
@@ -66,11 +66,11 @@
     <div class="profile-menu">
       <div class="user-info">
         <img
-          src="https://www.dogheroes.it/wp-content/uploads/2022/09/border-collie-alimentazione-scaled.jpg"
+          src="https://media.licdn.com/dms/image/D4E12AQEud3Ll5MI7cQ/article-inline_image-shrink_1000_1488/0/1660833954461?e=1698278400&v=beta&t=dCuSNgenSpCbwGlJViDUrU3grDKSN5dznu0xI-49X4g"
         />
 
         <div>
-          <h3>Nome Cognome</h3>
+          <h3>{{ profilo.name }} {{ profilo.surname }}</h3>
           <p>Info varie</p>
         </div>
       </div>

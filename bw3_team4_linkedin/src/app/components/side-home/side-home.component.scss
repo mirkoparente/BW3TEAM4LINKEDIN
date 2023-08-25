@@ -1,7 +1,10 @@
 .img-profilo{
-  height: 50px;
+  height: 68px;
   border-radius: 100%;
-  margin-right: 20px;
+  position: absolute;
+  margin: -38px auto;
+  border: 2px solid var(--color-background-container);
+  background-color: var(--color-background-container);
 }
 .main{
   border-radius: 10px 10px;
@@ -11,6 +14,7 @@
   background-color: #fff;
   max-width: 225px;
   height: 347px;
+
 }
 .sfondo{
   background-image: url('https://images.fastcompany.net/image/upload/w_596,c_limit,q_auto:best,f_auto/wp-cms/uploads/2021/03/LinkedIn-Default-Background-2020-.jpg');
@@ -18,4 +22,58 @@
   height: 56px;
   background-size: cover;
   border-radius: 10px 10px 0 0;
+  position: relative;
+
+
+}
+.space{
+  height: 40px;
+}
+.up-cont{
+  text-align: center;
+}
+.middle-cont p, span{
+  font-size: 0.7rem;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  margin: 0;
+  color: rgb(0, 0,0, 0.6);
+  text-align: left !important;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.bot-cont p, span{
+  font-size: 0.7rem;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  margin: 0;
+  color: rgb(0, 0,0, 0.6);
+  text-align: left !important;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.link{
+  margin-bottom: 5px;
+}
+a{
+text-decoration: none;
+color: black;
+}
+.link :hover{
+  background-color: #acaaaa;
+}
+.middle-cont :hover{
+  background-color: #acaaaa;
+}
+.bot-cont :hover{
+  background-color: #acaaaa;
+}
+
+
+
+@media screen and (max-width: 900px){
+  .main{
+    max-width: 100%;
+  }
+  .sfondo{
+    width: 100%;
+  }
 }
