@@ -1,33 +1,54 @@
-import { Component } from '@angular/core';
-import { Post, Profilo } from 'src/app/profilo';
-import { CardPrincipaleService } from 'src/app/service/card-principale.service';
+import { Comments, Profilo } from "./../../profilo";
+import { Component } from "@angular/core";
+import { Post } from "src/app/profilo";
+import { CardPrincipaleService } from "src/app/service/card-principale.service";
+import { CommentiComponent } from "../commenti/commenti.component";
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
+  selector: "app-home",
+  templateUrl: "./home.component.html",
+  styleUrls: ["./home.component.scss"],
 })
 export class HomeComponent {
-  profileData!: Profilo;
   post!: Post[];
+
+  toggle: boolean = false;
+  newToggle: boolean = false;
+  profileData!: Profilo;
   isPostAdmin: boolean = false;
+
+  commenti: Comments = {
+    comment: "",
+    rate: "1",
+    elementId: "",
+    _id: "",
+  };
 
   constructor(private privateSvc: CardPrincipaleService) {}
 
   ngOnInit() {
     this.privateSvc.getPost().subscribe((data) => {
-      this.post = data.reverse();
-      console.log('post', this.post);
+      this.post = data.reverse().slice(0, 10);
+      console.log(this.post);
+      this.post.forEach((post) => {
+        post.createdAt= new Date(post.createdAt).toLocaleTimeString("it");
+      })
     });
+  }
 
-    this.getProfile();
+  getCommenti(id: any) {
+    this.commenti.elementId = this.post[id]._id;
+    this.privateSvc.getComment(this.commenti.elementId).subscribe((res) => {
+      // this.post=res
+      console.log("Res", res);
+    });
   }
 
   //prendo dati profilo principale
   getProfile() {
     this.privateSvc.get().subscribe((resData) => {
       this.profileData = resData;
-      console.log('profilo', this.profileData);
+      console.log("profilo", this.profileData);
     });
   }
 

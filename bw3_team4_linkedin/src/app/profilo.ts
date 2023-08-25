@@ -32,11 +32,23 @@ export interface addExp {
   area: string;
 }
 
-export interface Post{
-  text:string;
-  id: string;
-  username:string;
+export interface Post {
+  text: string;
+  _id: string;
+  username: string;
   createdAt: string;
   updatedAt: string;
-  user: Profilo
+  user: Profilo;
+}
+
+export interface Comments {
+  comment: string;
+  rate: string;
+  elementId: string;
+  _id: any;
+}
+export interface Commento {
+  comment: string;
+  rate: string;
+  elementId: string;
 }
