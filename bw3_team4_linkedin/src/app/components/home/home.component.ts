@@ -11,6 +11,7 @@ import { CommentiComponent } from "../commenti/commenti.component";
 })
 export class HomeComponent {
   post!: Post[];
+
   toggle: boolean = false;
   newToggle: boolean = false;
   profileData!: Profilo;
@@ -20,6 +21,7 @@ export class HomeComponent {
     comment: "",
     rate: "1",
     elementId: "",
+    _id: "",
   };
 
   constructor(private privateSvc: CardPrincipaleService) {}

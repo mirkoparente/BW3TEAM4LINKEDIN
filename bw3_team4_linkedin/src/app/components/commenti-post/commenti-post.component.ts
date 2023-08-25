@@ -20,6 +20,7 @@ export class CommentiPostComponent {
     comment: "",
     rate: "1",
     elementId: "",
+    _id: "",
   };
   constructor(private privateSvc: CardPrincipaleService) {}
 
