@@ -129,7 +129,7 @@ export class CardPrincipaleService {
     });
   }
 
-  putComment(id: string, body: any): Observable<Comments> {
+  putComment(id: Commento, body: any): Observable<Comments> {
     return this.http.post<Comments>(this.urlCommenti + id, body, {
       headers: {
         Authorization: `Bearer ${"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGU3MmEzMmFkMjQ5NzAwMTQ2OTM2OTUiLCJpYXQiOjE2OTI4NzEyMTksImV4cCI6MTY5NDA4MDgxOX0.jZp_Lo_t3nFLECVAtZU1RiJDq8mQlNIt2MCDEfPxsT8"}`,

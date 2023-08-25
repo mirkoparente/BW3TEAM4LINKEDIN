@@ -43,7 +43,6 @@ export class CommentiComponent {
 
   getCommenti(id: any) {
     this.newCommento.elementId = id;
-
     this.privateSvc.getComment(this.newCommento.elementId).subscribe((res) => {
       this.comment = res;
       console.log("get", res);
