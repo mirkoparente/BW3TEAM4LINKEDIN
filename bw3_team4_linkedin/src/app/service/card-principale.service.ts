@@ -1,8 +1,8 @@
 import { Injectable } from "@angular/core";
-import { Comments, Post, Profilo } from "../profilo";
+import { Commento, Comments, Post, Profilo } from "../profilo";
 import { Exp } from "../profilo";
 import { addExp } from "../profilo";
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { environment } from "src/environments/environment.development";
 
@@ -120,24 +120,25 @@ export class CardPrincipaleService {
     });
   }
 
-  postComment(body: any): Observable<Comments[]> {
-    return this.http.post<Comments[]>(this.urlCommenti, body, {
+  postComment(body: any): Observable<Comments> {
+    return this.http.post<Comments>(this.urlCommenti, body, {
       headers: {
         Authorization: `Bearer ${"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGU3MmEzMmFkMjQ5NzAwMTQ2OTM2OTUiLCJpYXQiOjE2OTI4NzEyMTksImV4cCI6MTY5NDA4MDgxOX0.jZp_Lo_t3nFLECVAtZU1RiJDq8mQlNIt2MCDEfPxsT8"}`,
       },
     });
   }
 
-  putComment(id: string, body: any): Observable<Comments[]> {
-    return this.http.post<Comments[]>(this.urlCommenti + id, body, {
+  putComment(body: Commento, id: string): Observable<Comments> {
+    return this.http.put<Comments>(this.urlCommenti + id, body, {
       headers: {
         Authorization: `Bearer ${"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGU3MmEzMmFkMjQ5NzAwMTQ2OTM2OTUiLCJpYXQiOjE2OTI4NzEyMTksImV4cCI6MTY5NDA4MDgxOX0.jZp_Lo_t3nFLECVAtZU1RiJDq8mQlNIt2MCDEfPxsT8"}`,
+        "Content-Type": "application/json",
       },
     });
   }
 
-  deleteComment(id: string): Observable<Comments[]> {
-    return this.http.delete<Comments[]>(this.urlCommenti + id, {
+  deleteComment(id: string): Observable<Comments> {
+    return this.http.delete<Comments>(this.urlCommenti + id, {
       headers: {
         Authorization: `Bearer ${"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGU3MmEzMmFkMjQ5NzAwMTQ2OTM2OTUiLCJpYXQiOjE2OTI4NzEyMTksImV4cCI6MTY5NDA4MDgxOX0.jZp_Lo_t3nFLECVAtZU1RiJDq8mQlNIt2MCDEfPxsT8"}`,
       },

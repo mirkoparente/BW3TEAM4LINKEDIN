@@ -27,10 +27,13 @@ export class CommentiComponent {
   postComment(id: any) {
     this.newCommento.elementId = id;
     this.privateSvc.postComment(this.newCommento).subscribe((res) => {
-      this.comment = res;
+      // this.comment = res;
       console.log("post", res);
       console.log(this.comment);
       // console.log(this.commenti.comment);
+    });
+    this.privateSvc.getComment(this.newCommento.elementId).subscribe((res) => {
+      this.comment = res;
     });
     //   this.privateSvc.getPost().subscribe((data) => {
     //     this.post = data.reverse();
@@ -43,15 +46,23 @@ export class CommentiComponent {
 
     this.privateSvc.getComment(this.newCommento.elementId).subscribe((res) => {
       this.comment = res;
-
       console.log("get", res);
-      console.log("comment", this.comment);
     });
+  }
+
+  putCommenti(id: any) {
+    this.privateSvc.putComment(this.newCommento, id).subscribe((res) => {
+      // this.comment = res;
+      console.log("modifica", res);
+    });
+    // this.privateSvc.getComment(this.newCommento.elementId).subscribe((res) => {
+    //   this.comment = res;
+    // });
   }
 
   deleteCommenti(id: any) {
     this.privateSvc.deleteComment(id).subscribe((res) => {
-      this.comment = res;
+      // this.comment = res;
       console.log("elimina", res);
     });
     this.privateSvc.getComment(this.newCommento.elementId).subscribe((res) => {
