@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { ActivatedRoute, Router, NavigationStart } from '@angular/router';
-import { Profilo } from 'src/app/profilo';
+import { Profilo } from 'src/app/interface/profilo';
 import { CardPrincipaleService } from 'src/app/service/card-principale.service';
 
 @Component({
@@ -13,12 +13,11 @@ export class BottomCardComponent {
   id!: string;
   profileDataId!: Profilo;
 
-
-
-  constructor( private router: ActivatedRoute,
+  constructor(
+    private router: ActivatedRoute,
     private routing: Router,
-    private privateSvc: CardPrincipaleService) {}
-
+    private privateSvc: CardPrincipaleService
+  ) {}
 
   ngOnInit() {
     this.privateSvc.get().subscribe((res) => {
@@ -47,23 +46,14 @@ export class BottomCardComponent {
     });
   }
 
-
-
-   //prendo i dati del profilo ID
-   getServiceProfileId() {
+  //prendo i dati del profilo ID
+  getServiceProfileId() {
     this.privateSvc.getIdProfile(this.id).subscribe((resData) => {
       this.profileDataId = resData;
     });
   }
 
-
   ngOnChanges() {
     this.getServiceProfileId();
   }
 }
-
-
-
-
-
-

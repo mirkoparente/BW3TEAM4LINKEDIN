@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { ActivatedRoute, NavigationStart, Router } from '@angular/router';
-import { Profilo } from 'src/app/profilo';
+import { Profilo } from 'src/app/interface/profilo';
 import { CardPrincipaleService } from 'src/app/service/card-principale.service';
 
 @Component({
@@ -12,7 +12,6 @@ export class CardPrincipleComponent {
   profile!: Profilo;
   id!: string;
   profileDataId!: Profilo;
-
 
   constructor(
     private router: ActivatedRoute,

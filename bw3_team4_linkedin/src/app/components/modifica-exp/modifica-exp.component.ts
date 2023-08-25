@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Exp, Profilo, addExp } from 'src/app/profilo';
+import { Exp, Profilo, addExp } from 'src/app/interface/profilo';
 import { CardPrincipaleService } from 'src/app/service/card-principale.service';
 
 @Component({
@@ -52,8 +52,8 @@ export class ModificaExpComponent {
   getIdExp(i: number) {
     this.privateSvc.getIdExp(this.exp[i]._id).subscribe((res) => {
       this.expId = res;
-      console.log("expid",this.expId);
-      this.formData=this.expId
+      console.log('expid', this.expId);
+      this.formData = this.expId;
     });
   }
 

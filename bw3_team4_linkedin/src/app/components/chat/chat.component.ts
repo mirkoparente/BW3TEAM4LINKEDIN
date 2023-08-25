@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Profilo } from 'src/app/profilo';
+import { Profilo } from 'src/app/interface/profilo';
 import { CardPrincipaleService } from 'src/app/service/card-principale.service';
 
 @Component({

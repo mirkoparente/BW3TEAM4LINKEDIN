@@ -1,10 +1,10 @@
-import { Comments, Profilo } from './../../profilo';
+import { Comments, Profilo } from '../../interface/profilo';
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Post } from 'src/app/profilo';
+import { Post } from 'src/app/interface/profilo';
 import { CardPrincipaleService } from 'src/app/service/card-principale.service';
-import { CommentiComponent } from "../commenti/commenti.component";
+import { CommentiComponent } from '../commenti/commenti.component';
 
 @Component({
   selector: 'app-home',
@@ -21,10 +21,10 @@ export class HomeComponent {
   textPostMod: string = '';
 
   commenti: Comments = {
-    comment: "",
-    rate: "1",
-    elementId: "",
-    _id: "",
+    comment: '',
+    rate: '1',
+    elementId: '',
+    _id: '',
   };
 
   constructor(
@@ -42,8 +42,8 @@ export class HomeComponent {
 
       this.ceckPostUser();
       this.post.forEach((post) => {
-        post.createdAt= new Date(post.createdAt).toLocaleTimeString("it");
-      })
+        post.createdAt = new Date(post.createdAt).toLocaleTimeString('it');
+      });
     });
   }
 

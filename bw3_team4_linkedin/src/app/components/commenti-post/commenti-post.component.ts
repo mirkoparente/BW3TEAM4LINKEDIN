@@ -1,11 +1,11 @@
-import { Comments, Post, Profilo } from "src/app/profilo";
-import { Component, Input } from "@angular/core";
-import { CardPrincipaleService } from "src/app/service/card-principale.service";
+import { Comments, Post, Profilo } from 'src/app/interface/profilo';
+import { Component, Input } from '@angular/core';
+import { CardPrincipaleService } from 'src/app/service/card-principale.service';
 
 @Component({
-  selector: "app-commenti-post",
-  templateUrl: "./commenti-post.component.html",
-  styleUrls: ["./commenti-post.component.scss"],
+  selector: 'app-commenti-post',
+  templateUrl: './commenti-post.component.html',
+  styleUrls: ['./commenti-post.component.scss'],
 })
 export class CommentiPostComponent {
   @Input() post!: Post;
@@ -18,17 +18,17 @@ export class CommentiPostComponent {
   isPostAdmin: boolean = false;
 
   commenti: Comments = {
-    comment: "",
-    rate: "1",
-    elementId: "",
-    _id: "",
+    comment: '',
+    rate: '1',
+    elementId: '',
+    _id: '',
   };
   constructor(private privateSvc: CardPrincipaleService) {}
 
   getProfile() {
     this.privateSvc.get().subscribe((resData) => {
       this.profileData = resData;
-      console.log("profilo", this.profileData);
+      console.log('profilo', this.profileData);
     });
   }
 

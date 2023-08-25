@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Profilo } from 'src/app/profilo';
+import { Profilo } from 'src/app/interface/profilo';
 import { CardPrincipaleService } from 'src/app/service/card-principale.service';
 
 @Component({
@@ -8,7 +8,7 @@ import { CardPrincipaleService } from 'src/app/service/card-principale.service';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent {
-  profilo!: Profilo
+  profilo!: Profilo;
   constructor(public svcProf: CardPrincipaleService) {}
   status: boolean = false;
   status2: boolean = true;
@@ -20,9 +20,10 @@ export class NavbarComponent {
     this.status2 = !this.status2;
     console.log('clik avvenuto');
   }
-  ngOnInit(){
+  ngOnInit() {
     this.svcProf.get().subscribe((res) => {
       this.profilo = res;
       console.log(res);
-    })}
+    });
+  }
 }

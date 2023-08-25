@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Comments, Post, Profilo } from '../profilo';
-import { Exp } from '../profilo';
-import { addExp } from '../profilo';
+import { Comments, Post, Profilo } from '../interface/profilo';
+import { Exp } from '../interface/profilo';
+import { addExp } from '../interface/profilo';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.development';
@@ -92,10 +92,10 @@ export class CardPrincipaleService {
     });
   }
   //elimina esperienza
-  deleteExp(expId: string){
+  deleteExp(expId: string) {
     const urlUpdate = `https://striveschool-api.herokuapp.com/api/profile/${this.userId}/experiences/${expId}`;
     return this.http.delete(urlUpdate, {
-      responseType: "text",
+      responseType: 'text',
       headers: {
         Authorization: `Bearer ${this.appId}`,
       },
@@ -116,7 +116,7 @@ export class CardPrincipaleService {
   getComment(id: string): Observable<Comments[]> {
     return this.http.get<Comments[]>(this.urlCommenti + id, {
       headers: {
-        Authorization: `Bearer ${"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGU3MmEzMmFkMjQ5NzAwMTQ2OTM2OTUiLCJpYXQiOjE2OTI4NzEyMTksImV4cCI6MTY5NDA4MDgxOX0.jZp_Lo_t3nFLECVAtZU1RiJDq8mQlNIt2MCDEfPxsT8"}`,
+        Authorization: `Bearer ${'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGU3MmEzMmFkMjQ5NzAwMTQ2OTM2OTUiLCJpYXQiOjE2OTI4NzEyMTksImV4cCI6MTY5NDA4MDgxOX0.jZp_Lo_t3nFLECVAtZU1RiJDq8mQlNIt2MCDEfPxsT8'}`,
       },
     });
   }
