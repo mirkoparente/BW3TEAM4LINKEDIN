@@ -1,19 +1,23 @@
-<div class="d-flex flex-column flex-md-row justify-content-between">
-  <div>
+<div class="container">
+<div class="d-flex flex-column flex-md-row justify-content-between align-self-center">
+
     <input
+    class="form-control h-50 rounded-5 w-100"
       type="text"
       [(ngModel)]="newCommento.comment"
       placeholder="Aggiungi un commento..."
     />
     <button
       type="button"
-      class="btn btn-primary rounded-5"
+      class="btn btn-primary rounded-5 h-50"
       (click)="postComment(id)"
+      *ngIf="newCommento.comment"
     >
       Pubblica
     </button>
-  </div>
-  <a (click)="getCommenti(id)">Vedi commenti</a>
+
+  <a class="btn fs-6" (click)="getCommenti(id)"
+  *ngIf="!newCommento">Vedi commenti</a>
 </div>
 
 <div
@@ -69,4 +73,5 @@
     </ul>
   </div>
 </div>
+
 <!-- *ngIf=" newToggle" -->
